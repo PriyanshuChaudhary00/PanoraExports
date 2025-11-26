@@ -140,23 +140,23 @@ export default function LuxuryLanding() {
       }
     });
 
-    // 1. Start with Earth small (0.4) and Text visible
-    tl.set(earthRef.current, { scale: 0.4, opacity: 0.8 });
+    // 1. Start with Earth small (0.5) and Text visible
+    tl.set(earthRef.current, { scale: 0.5, opacity: 0.8 });
     tl.set(textRef.current, { opacity: 1, y: 0 });
     tl.set(overlayRef.current, { opacity: 0 });
 
-    // 2. Zoom Earth IN dramatically (to 4x)
+    // 2. Zoom Earth IN (to 1.5x)
     tl.to(earthRef.current, { 
-      scale: 4, 
+      scale: 1.5, 
       duration: 10, 
       ease: "power2.inOut" 
     }, 0);
 
-    // 3. Fade out main text early in the zoom
+    // 3. Keep text visible but move it up slightly
     tl.to(textRef.current, { 
-      opacity: 0, 
-      y: -100, 
-      duration: 3, 
+      opacity: 1, // Text remains visible
+      y: -50, // Move up slightly
+      duration: 10, 
       ease: "power1.out" 
     }, 0);
 
