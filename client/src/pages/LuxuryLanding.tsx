@@ -122,11 +122,13 @@ export default function LuxuryLanding() {
     offset: ["start start", "end end"]
   });
   
-  // More subtle zoom
-  const scale = useTransform(zoomScroll, [0, 0.8], [1, 1.2]); 
-  const opacity = useTransform(zoomScroll, [0.6, 0.9], [1, 0]);
-  const textY = useTransform(zoomScroll, [0, 0.5], [0, -50]);
-  const textOpacity = useTransform(zoomScroll, [0, 0.3], [1, 0]);
+  // Enhanced zoom: Starts small (0.4) and zooms in dramatically (3)
+  const scale = useTransform(zoomScroll, [0, 1], [0.4, 3]); 
+  const opacity = useTransform(zoomScroll, [0.9, 1], [1, 0]);
+  
+  // Text animations synchronized with zoom
+  const textScale = useTransform(zoomScroll, [0, 0.3], [1, 1.2]);
+  const textOpacity = useTransform(zoomScroll, [0.1, 0.4], [1, 0]);
 
   const chartData = [
     { name: 'Jan', value: 400 },
@@ -340,15 +342,15 @@ export default function LuxuryLanding() {
       </section>
 
       {/* Zoom Scroll Feature Section - Live Map Simulation */}
-      <div ref={zoomRef} className="h-[250vh] relative bg-black">
-        <div className="sticky top-0 h-screen overflow-hidden">
-          <motion.div style={{ scale, opacity: useTransform(zoomScroll, [0.8, 1], [1, 0]) }} className="absolute inset-0">
+      <div ref={zoomRef} className="h-[400vh] relative bg-black">
+        <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center">
+          <motion.div style={{ scale, opacity }} className="absolute inset-0 flex items-center justify-center">
              <img src={goldenGlobe} alt="Global" className="w-full h-full object-cover opacity-80" />
              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
           </motion.div>
           
           <motion.div 
-            style={{ y: textY, opacity: textOpacity }}
+            style={{ scale: textScale, opacity: textOpacity }}
             className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none"
           >
             <div className="text-center max-w-5xl px-6">
@@ -364,7 +366,7 @@ export default function LuxuryLanding() {
 
           {/* Simulated UI elements appearing on zoom */}
           <motion.div 
-             style={{ opacity: useTransform(zoomScroll, [0.3, 0.6], [0, 1]) }}
+             style={{ opacity: useTransform(zoomScroll, [0.4, 0.6], [0, 1]) }}
              className="absolute inset-0 z-20 pointer-events-none p-12 flex flex-col justify-between"
           >
             <div className="flex justify-between items-start">
