@@ -63,13 +63,13 @@ const FeatureCard = ({ icon: Icon, title, desc, delay }: any) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.8, delay }}
-    className="bg-white p-10 border border-[#d4af37]/10 hover:border-[#d4af37] transition-all duration-700 group hover:-translate-y-2 shadow-sm hover:shadow-2xl hover:shadow-[#d4af37]/10"
+    className="bg-white dark:bg-slate-800 p-10 border border-[#d4af37]/10 hover:border-[#d4af37] transition-all duration-700 group hover:-translate-y-2 shadow-sm hover:shadow-2xl hover:shadow-[#d4af37]/10"
   >
-    <div className="w-14 h-14 bg-[#fdfbf7] border border-[#d4af37]/20 rounded-full flex items-center justify-center text-[#d4af37] mb-8 group-hover:bg-[#d4af37] group-hover:text-white transition-all duration-500">
+    <div className="w-14 h-14 bg-[#fdfbf7] dark:bg-slate-700 border border-[#d4af37]/20 rounded-full flex items-center justify-center text-[#d4af37] mb-8 group-hover:bg-[#d4af37] group-hover:text-white transition-all duration-500">
       <Icon strokeWidth={1.2} className="w-6 h-6" />
     </div>
-    <h3 className="font-luxury-heading text-2xl mb-4 text-slate-900 group-hover:text-[#d4af37] transition-colors duration-500 italic">{title}</h3>
-    <p className="text-slate-500 leading-relaxed text-sm font-light">{desc}</p>
+    <h3 className="font-luxury-heading text-2xl mb-4 text-slate-900 dark:text-white group-hover:text-[#d4af37] transition-colors duration-500 italic">{title}</h3>
+    <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm font-light">{desc}</p>
     <div className="mt-8 flex items-center text-[#d4af37] text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-x-4 group-hover:translate-x-0">
       Learn More <ArrowRight className="w-3 h-3 ml-2" />
     </div>
@@ -97,13 +97,13 @@ const ParallaxSection = ({ children, bgImage, overlayOpacity = 0.4 }: { children
 };
 
 const AccordionItem = ({ question, answer, isOpen, onClick }: any) => (
-  <div className="border-b border-[#d4af37]/20">
+  <div className="border-b border-[#d4af37]/20 dark:border-[#d4af37]/30">
     <button 
       onClick={onClick}
       className="w-full py-6 flex justify-between items-center text-left hover:text-[#d4af37] transition-colors group"
     >
-      <span className="font-luxury-heading text-xl md:text-2xl italic text-slate-800 group-hover:text-[#d4af37] transition-colors">{question}</span>
-      {isOpen ? <ChevronUp className="text-[#d4af37]" /> : <ChevronDown className="text-slate-400 group-hover:text-[#d4af37]" />}
+      <span className="font-luxury-heading text-xl md:text-2xl italic text-slate-800 dark:text-white group-hover:text-[#d4af37] transition-colors">{question}</span>
+      {isOpen ? <ChevronUp className="text-[#d4af37]" /> : <ChevronDown className="text-slate-400 dark:text-slate-500 group-hover:text-[#d4af37]" />}
     </button>
     <motion.div 
       initial={false}
@@ -111,7 +111,7 @@ const AccordionItem = ({ question, answer, isOpen, onClick }: any) => (
       transition={{ duration: 0.4, ease: "easeInOut" }}
       className="overflow-hidden"
     >
-      <p className="pb-8 text-slate-500 leading-relaxed font-light max-w-3xl">{answer}</p>
+      <p className="pb-8 text-slate-500 dark:text-slate-400 leading-relaxed font-light max-w-3xl">{answer}</p>
     </motion.div>
   </div>
 );
@@ -332,26 +332,26 @@ export default function LuxuryLanding() {
       </section>
 
       {/* Heritage / Story Section */}
-      <section id="heritage" className="py-40 px-8 bg-[#fdfbf7] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-[#d4af37]/5 skew-x-12 translate-x-40" />
+      <section id="heritage" className="py-40 px-8 bg-[#fdfbf7] dark:bg-slate-900 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-[#d4af37]/5 dark:bg-[#d4af37]/10 skew-x-12 translate-x-40" />
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center relative z-10">
           <div className="relative group">
             <div className="absolute -top-10 -left-10 w-60 h-60 border border-[#d4af37]/20 rounded-full animate-spin-slow opacity-50" />
             <div className="overflow-hidden">
                <img src={watchMech} alt="Precision" className="relative z-10 shadow-2xl w-full grayscale group-hover:grayscale-0 transition-all duration-1000 scale-100 group-hover:scale-105" />
             </div>
-            <div className="absolute -bottom-12 -right-12 bg-white p-12 shadow-2xl border-t-4 border-[#d4af37] z-20 max-w-sm hidden md:block">
-              <p className="font-luxury-heading italic text-3xl mb-4 text-slate-800">"Precision is not an act, it is a habit."</p>
-              <p className="text-xs uppercase tracking-wider text-slate-400">— Founder, 1985</p>
+            <div className="absolute -bottom-12 -right-12 bg-white dark:bg-slate-800 p-12 shadow-2xl border-t-4 border-[#d4af37] z-20 max-w-sm hidden md:block">
+              <p className="font-luxury-heading italic text-3xl mb-4 text-slate-800 dark:text-white">"Precision is not an act, it is a habit."</p>
+              <p className="text-xs uppercase tracking-wider text-slate-400 dark:text-slate-500">— Founder, 1985</p>
             </div>
           </div>
           <div>
             <span className="text-[#d4af37] text-xs font-bold tracking-[0.4em] uppercase block mb-6">Our Philosophy</span>
-            <h2 className="font-luxury-heading text-6xl md:text-7xl text-slate-900 mb-10 italic leading-tight">
+            <h2 className="font-luxury-heading text-6xl md:text-7xl text-slate-900 dark:text-white mb-10 italic leading-tight">
               Curating the <br />
               <span className="text-[#d4af37]">Exceptional.</span>
             </h2>
-            <p className="text-slate-600 text-lg leading-relaxed mb-10 font-light">
+            <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-10 font-light">
               Meridian was founded on the principle that logistics is not merely a transaction, but a vital artery of global commerce. For three decades, we have served the world's most distinguished brands with an unyielding commitment to excellence.
             </p>
             <div className="space-y-6 mb-16">
@@ -364,11 +364,11 @@ export default function LuxuryLanding() {
                   <div className="mt-1 w-6 h-6 rounded-full border border-[#d4af37]/30 flex items-center justify-center text-[#d4af37] group-hover:bg-[#d4af37] group-hover:text-white transition-all duration-300">
                     <CheckCircle2 className="w-3 h-3" />
                   </div>
-                  <span className="text-sm uppercase tracking-wider text-slate-800 pt-1">{item}</span>
+                  <span className="text-sm uppercase tracking-wider text-slate-800 dark:text-slate-300 pt-1">{item}</span>
                 </div>
               ))}
             </div>
-            <div className="grid grid-cols-3 gap-12 border-t border-slate-200 pt-12">
+            <div className="grid grid-cols-3 gap-12 border-t border-slate-200 dark:border-slate-700 pt-12">
               <AnimatedCounter value="150" label="Countries" suffix="+" />
               <AnimatedCounter value="40" label="Deliveries" suffix="k" />
               <AnimatedCounter value="30" label="Years" />
@@ -441,16 +441,16 @@ export default function LuxuryLanding() {
       </div>
 
       {/* Concierge Services */}
-      <section id="concierge" className="py-40 px-6 bg-[#fdfbf7] text-slate-900 relative">
+      <section id="concierge" className="py-40 px-6 bg-[#fdfbf7] dark:bg-slate-900 text-slate-900 dark:text-white relative">
         <div className="max-w-[1800px] mx-auto">
           <div className="grid lg:grid-cols-12 gap-20">
             <div className="lg:col-span-4 sticky top-40 self-start">
               <span className="text-[#d4af37] text-xs font-bold tracking-[0.4em] uppercase block mb-6">Capabilities</span>
               <h2 className="font-luxury-heading text-6xl md:text-7xl mb-8 italic leading-none">The Concierge Standard</h2>
-              <p className="text-slate-500 text-lg leading-relaxed mb-12">
+              <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed mb-12">
                 We do not simply move cargo; we engineer its journey. Every shipment is assigned a dedicated concierge manager who oversees every nautical mile.
               </p>
-              <button className="bg-[#0f172a] text-white px-10 py-4 text-sm uppercase tracking-widest hover:bg-[#d4af37] transition-colors duration-500">
+              <button className="bg-[#0f172a] dark:bg-slate-800 text-white px-10 py-4 text-sm uppercase tracking-widest hover:bg-[#d4af37] transition-colors duration-500">
                 Download Service Guide
               </button>
             </div>
@@ -531,14 +531,14 @@ export default function LuxuryLanding() {
       </ParallaxSection>
 
       {/* Fleet Showcase - Editorial Style */}
-      <section id="fleet" className="py-40 bg-[#fdfbf7]">
+      <section id="fleet" className="py-40 bg-[#fdfbf7] dark:bg-slate-900">
         <div className="max-w-[1800px] mx-auto px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24">
             <div>
               <span className="text-[#d4af37] text-xs font-bold tracking-[0.4em] uppercase block mb-6">Our Assets</span>
-              <h2 className="font-luxury-heading text-6xl md:text-7xl text-slate-900 italic">The Meridian Fleet</h2>
+              <h2 className="font-luxury-heading text-6xl md:text-7xl text-slate-900 dark:text-white italic">The Meridian Fleet</h2>
             </div>
-            <p className="max-w-md text-slate-500 text-sm leading-relaxed mt-8 md:mt-0 border-l border-[#d4af37] pl-6">
+            <p className="max-w-md text-slate-500 dark:text-slate-400 text-sm leading-relaxed mt-8 md:mt-0 border-l border-[#d4af37] pl-6">
               From Boeing 747-8F freighters to Triple-E class container vessels, our access to capacity is unmatched in the industry.
             </p>
           </div>
@@ -638,11 +638,11 @@ export default function LuxuryLanding() {
       </section>
 
       {/* Leadership / Team */}
-      <section className="py-40 px-8 bg-[#fdfbf7]">
+      <section className="py-40 px-8 bg-[#fdfbf7] dark:bg-slate-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
             <span className="text-[#d4af37] text-xs font-bold tracking-[0.4em] uppercase block mb-6">Leadership</span>
-            <h2 className="font-luxury-heading text-5xl md:text-6xl mb-6 italic text-slate-900">The Board</h2>
+            <h2 className="font-luxury-heading text-5xl md:text-6xl mb-6 italic text-slate-900 dark:text-white">The Board</h2>
             <div className="w-24 h-1 bg-[#d4af37] mx-auto" />
           </div>
 
@@ -657,8 +657,8 @@ export default function LuxuryLanding() {
                   <img src={person.img} alt={person.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-[#d4af37]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-multiply" />
                 </div>
-                <h3 className="font-luxury-heading text-2xl italic text-slate-900 mb-2 group-hover:text-[#d4af37] transition-colors">{person.name}</h3>
-                <p className="text-xs uppercase tracking-widest text-slate-500">{person.role}</p>
+                <h3 className="font-luxury-heading text-2xl italic text-slate-900 dark:text-white mb-2 group-hover:text-[#d4af37] transition-colors">{person.name}</h3>
+                <p className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">{person.role}</p>
               </div>
             ))}
           </div>
@@ -666,11 +666,11 @@ export default function LuxuryLanding() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-40 bg-white">
+      <section className="py-40 bg-white dark:bg-slate-900">
         <div className="max-w-4xl mx-auto px-8">
           <div className="mb-20">
             <span className="text-[#d4af37] text-xs font-bold tracking-[0.4em] uppercase block mb-6">Insights</span>
-            <h2 className="font-luxury-heading text-5xl mb-6 italic text-slate-900">Frequently Asked</h2>
+            <h2 className="font-luxury-heading text-5xl mb-6 italic text-slate-900 dark:text-white">Frequently Asked</h2>
           </div>
           
           <div className="space-y-4">
@@ -693,7 +693,7 @@ export default function LuxuryLanding() {
       </section>
 
       {/* Testimonial */}
-      <section className="py-40 bg-[#1e1e1e] text-white text-center px-6 relative overflow-hidden">
+      <section className="py-40 bg-[#1e1e1e] dark:bg-slate-950 text-white text-center px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="flex justify-center gap-2 text-[#d4af37] mb-12">
@@ -715,64 +715,64 @@ export default function LuxuryLanding() {
       </section>
 
       {/* Contact Form */}
-      <section id="contact" className="py-40 px-6 bg-[#fdfbf7] relative">
-        <div className="max-w-7xl mx-auto bg-white shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-[#d4af37]/10 p-12 md:p-24 relative overflow-hidden">
+      <section id="contact" className="py-40 px-6 bg-[#fdfbf7] dark:bg-slate-900 relative">
+        <div className="max-w-7xl mx-auto bg-white dark:bg-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-[#d4af37]/10 p-12 md:p-24 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent" />
           
           <div className="grid lg:grid-cols-2 gap-20">
             <div>
               <span className="text-[#d4af37] text-xs font-bold tracking-[0.4em] uppercase block mb-6">Inquiries</span>
-              <h2 className="font-luxury-heading text-6xl mb-8 text-slate-900 italic">Request Concierge</h2>
-              <p className="text-slate-500 mb-16 leading-relaxed font-light text-lg">
+              <h2 className="font-luxury-heading text-6xl mb-8 text-slate-900 dark:text-white italic">Request Concierge</h2>
+              <p className="text-slate-500 dark:text-slate-400 mb-16 leading-relaxed font-light text-lg">
                 Please provide details about your shipment requirements. Our dedicated team reviews all requests within 2 hours.
               </p>
               
               <div className="space-y-10">
                 <div className="flex gap-6">
-                  <div className="w-12 h-12 bg-[#fdfbf7] flex items-center justify-center text-[#d4af37]">
+                  <div className="w-12 h-12 bg-[#fdfbf7] dark:bg-slate-700 flex items-center justify-center text-[#d4af37]">
                     <MapPin strokeWidth={1} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 mb-2 uppercase tracking-wider text-xs">Headquarters</h4>
-                    <p className="text-slate-500 font-luxury-heading italic text-xl">1 Knightsbridge Green<br/>London, SW1X 7QA</p>
+                    <h4 className="font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wider text-xs">Headquarters</h4>
+                    <p className="text-slate-500 dark:text-slate-400 font-luxury-heading italic text-xl">1 Knightsbridge Green<br/>London, SW1X 7QA</p>
                   </div>
                 </div>
                 <div className="flex gap-6">
-                   <div className="w-12 h-12 bg-[#fdfbf7] flex items-center justify-center text-[#d4af37]">
+                   <div className="w-12 h-12 bg-[#fdfbf7] dark:bg-slate-700 flex items-center justify-center text-[#d4af37]">
                     <Globe strokeWidth={1} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 mb-2 uppercase tracking-wider text-xs">Global Access</h4>
-                    <p className="text-slate-500 font-luxury-heading italic text-xl">+44 20 7123 4567<br/>concierge@meridian.global</p>
+                    <h4 className="font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wider text-xs">Global Access</h4>
+                    <p className="text-slate-500 dark:text-slate-400 font-luxury-heading italic text-xl">+44 20 7123 4567<br/>concierge@meridian.global</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            <form className="space-y-8 bg-[#fdfbf7]/50 p-10 border border-[#d4af37]/5">
+            <form className="space-y-8 bg-[#fdfbf7]/50 dark:bg-slate-700/30 p-10 border border-[#d4af37]/5">
               <div className="grid grid-cols-2 gap-8">
                 <div className="space-y-2 group">
-                  <label className="text-xs uppercase tracking-widest text-slate-500 group-focus-within:text-[#d4af37] transition-colors">First Name</label>
-                  <input type="text" className="w-full border-b border-slate-200 py-3 focus:outline-none focus:border-[#d4af37] transition-colors bg-transparent font-luxury-heading italic text-xl" />
+                  <label className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 group-focus-within:text-[#d4af37] transition-colors">First Name</label>
+                  <input type="text" className="w-full border-b border-slate-200 dark:border-slate-600 py-3 focus:outline-none focus:border-[#d4af37] transition-colors bg-transparent dark:text-white font-luxury-heading italic text-xl" />
                 </div>
                 <div className="space-y-2 group">
-                  <label className="text-xs uppercase tracking-widest text-slate-500 group-focus-within:text-[#d4af37] transition-colors">Last Name</label>
-                  <input type="text" className="w-full border-b border-slate-200 py-3 focus:outline-none focus:border-[#d4af37] transition-colors bg-transparent font-luxury-heading italic text-xl" />
+                  <label className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 group-focus-within:text-[#d4af37] transition-colors">Last Name</label>
+                  <input type="text" className="w-full border-b border-slate-200 dark:border-slate-600 py-3 focus:outline-none focus:border-[#d4af37] transition-colors bg-transparent dark:text-white font-luxury-heading italic text-xl" />
                 </div>
               </div>
               <div className="space-y-2 group">
-                <label className="text-xs uppercase tracking-widest text-slate-500 group-focus-within:text-[#d4af37] transition-colors">Company</label>
-                <input type="text" className="w-full border-b border-slate-200 py-3 focus:outline-none focus:border-[#d4af37] transition-colors bg-transparent font-luxury-heading italic text-xl" />
+                <label className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 group-focus-within:text-[#d4af37] transition-colors">Company</label>
+                <input type="text" className="w-full border-b border-slate-200 dark:border-slate-600 py-3 focus:outline-none focus:border-[#d4af37] transition-colors bg-transparent dark:text-white font-luxury-heading italic text-xl" />
               </div>
               <div className="space-y-2 group">
-                <label className="text-xs uppercase tracking-widest text-slate-500 group-focus-within:text-[#d4af37] transition-colors">Email</label>
-                <input type="email" className="w-full border-b border-slate-200 py-3 focus:outline-none focus:border-[#d4af37] transition-colors bg-transparent font-luxury-heading italic text-xl" />
+                <label className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 group-focus-within:text-[#d4af37] transition-colors">Email</label>
+                <input type="email" className="w-full border-b border-slate-200 dark:border-slate-600 py-3 focus:outline-none focus:border-[#d4af37] transition-colors bg-transparent dark:text-white font-luxury-heading italic text-xl" />
               </div>
               <div className="space-y-2 group">
-                <label className="text-xs uppercase tracking-widest text-slate-500 group-focus-within:text-[#d4af37] transition-colors">Requirements</label>
-                <textarea rows={4} className="w-full border-b border-slate-200 py-3 focus:outline-none focus:border-[#d4af37] transition-colors bg-transparent resize-none font-luxury-heading italic text-xl" />
+                <label className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 group-focus-within:text-[#d4af37] transition-colors">Requirements</label>
+                <textarea rows={4} className="w-full border-b border-slate-200 dark:border-slate-600 py-3 focus:outline-none focus:border-[#d4af37] transition-colors bg-transparent dark:text-white resize-none font-luxury-heading italic text-xl" />
               </div>
-              <button className="bg-[#0f172a] text-white px-10 py-5 w-full text-sm uppercase tracking-widest hover:bg-[#d4af37] transition-colors duration-500 mt-6 shadow-xl">
+              <button className="bg-[#0f172a] dark:bg-slate-700 text-white px-10 py-5 w-full text-sm uppercase tracking-widest hover:bg-[#d4af37] transition-colors duration-500 mt-6 shadow-xl">
                 Submit Request
               </button>
             </form>
@@ -781,17 +781,17 @@ export default function LuxuryLanding() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#0f172a] text-white pt-32 pb-12 px-8 border-t border-[#d4af37]/30">
+      <footer className="bg-[#0f172a] dark:bg-slate-950 text-white pt-32 pb-12 px-8 border-t border-[#d4af37]/30">
         <div className="max-w-[1800px] mx-auto grid md:grid-cols-4 gap-16 mb-24">
           <div className="col-span-2">
             <div className="font-luxury-heading text-5xl italic font-bold mb-10">Meridian.</div>
-            <p className="text-white/40 max-w-md leading-relaxed font-light text-lg">
+            <p className="text-white/40 dark:text-white/50 max-w-md leading-relaxed font-light text-lg">
               The definitive standard in luxury logistics. Connecting the world's most prestigious brands with their global markets through uncompromised service.
             </p>
           </div>
           <div>
              <h4 className="font-bold mb-8 text-xs uppercase tracking-[0.2em] text-[#d4af37]">Sitemap</h4>
-             <ul className="space-y-6 text-white/60 text-sm font-light">
+             <ul className="space-y-6 text-white/60 dark:text-white/50 text-sm font-light">
                <li className="hover:text-[#d4af37] transition-colors cursor-pointer hover:translate-x-2 duration-300 flex items-center gap-2"><ArrowRight className="w-3 h-3 opacity-0 hover:opacity-100" />Heritage</li>
                <li className="hover:text-[#d4af37] transition-colors cursor-pointer hover:translate-x-2 duration-300 flex items-center gap-2"><ArrowRight className="w-3 h-3 opacity-0 hover:opacity-100" />Concierge</li>
                <li className="hover:text-[#d4af37] transition-colors cursor-pointer hover:translate-x-2 duration-300 flex items-center gap-2"><ArrowRight className="w-3 h-3 opacity-0 hover:opacity-100" />Fleet</li>
@@ -800,14 +800,14 @@ export default function LuxuryLanding() {
           </div>
           <div>
              <h4 className="font-bold mb-8 text-xs uppercase tracking-[0.2em] text-[#d4af37]">Legal</h4>
-             <ul className="space-y-6 text-white/60 text-sm font-light">
+             <ul className="space-y-6 text-white/60 dark:text-white/50 text-sm font-light">
                <li className="hover:text-[#d4af37] transition-colors cursor-pointer">Privacy Policy</li>
                <li className="hover:text-[#d4af37] transition-colors cursor-pointer">Terms of Service</li>
                <li className="hover:text-[#d4af37] transition-colors cursor-pointer">Cookie Policy</li>
              </ul>
           </div>
         </div>
-        <div className="max-w-[1800px] mx-auto border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-white/30 uppercase tracking-widest">
+        <div className="max-w-[1800px] mx-auto border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-white/30 dark:text-white/40 uppercase tracking-widest">
            <div>© 2025 Meridian Global Logistics. All rights reserved.</div>
            <div className="flex gap-12 mt-6 md:mt-0">
              <span className="hover:text-white cursor-pointer transition-colors">LinkedIn</span>
