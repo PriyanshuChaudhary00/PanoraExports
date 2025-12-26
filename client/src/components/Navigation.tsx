@@ -58,6 +58,24 @@ export default function Navigation() {
                         Verification
                     </a>
                     <a
+                        href="/faq"
+                        className={`text-sm transition-colors ${location === '/faq'
+                            ? 'text-slate-900 dark:text-white font-medium'
+                            : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                            }`}
+                    >
+                        FAQ
+                    </a>
+                    <a
+                        href="/contact"
+                        className={`text-sm transition-colors ${location === '/contact'
+                            ? 'text-slate-900 dark:text-white font-medium'
+                            : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+                            }`}
+                    >
+                        Contact
+                    </a>
+                    <a
                         href="/about"
                         className={`text-sm transition-colors ${location === '/about'
                             ? 'text-slate-900 dark:text-white font-medium'
@@ -166,6 +184,20 @@ export default function Navigation() {
                             className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                         >
                             Verification
+                        </a>
+                        <a
+                            href="/faq"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+                        >
+                            FAQ
+                        </a>
+                        <a
+                            href="/contact"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+                        >
+                            Contact
                         </a>
                         <a
                             href="/about"

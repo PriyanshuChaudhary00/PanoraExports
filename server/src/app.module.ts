@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { VerificationModule } from './verification/verification.module';
+import { ContactModule } from './contact/contact.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { SupabaseModule } from './supabase/supabase.module';
 
@@ -25,6 +26,7 @@ import { SupabaseModule } from './supabase/supabase.module';
 
         // Feature Modules
         VerificationModule,
+        ContactModule,
     ],
 })
 export class AppModule { }

@@ -202,18 +202,15 @@ export default function ProductsPage() {
                                 transition={{ duration: 0.3, delay: index * 0.05 }}
                                 className="group block bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 hover:border-slate-300 dark:hover:border-slate-700 transition-all hover:shadow-lg"
                             >
-                                {/* Image Container with Blurred Thumbnail */}
+                                {/* Product Image - Always Clear */}
                                 <div className="relative aspect-[4/3] bg-slate-100 dark:bg-slate-900 overflow-hidden">
-                                    {/* Blurred Thumbnail - Default State */}
                                     <img
                                         src={product.image}
                                         alt={product.name}
                                         loading="lazy"
-                                        className="absolute inset-0 w-full h-full object-cover blur-md brightness-75 saturate-50 scale-110 group-hover:blur-none group-hover:brightness-100 group-hover:saturate-100 group-hover:scale-105 transition-all duration-500"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
-
-                                    {/* Subtle overlay on default state */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent group-hover:opacity-0 transition-opacity duration-500" />
+                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
                                 </div>
 
                                 {/* Compact Content */}
@@ -249,14 +246,13 @@ export default function ProductsPage() {
                                 className="group flex gap-4 bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 hover:border-slate-300 dark:hover:border-slate-700 transition-all p-4 hover:shadow-lg"
                             >
                                 {/* Image Container */}
-                                <div className="relative w-32 h-24 bg-slate-100 dark:bg-slate-900 flex-shrink-0 overflow-hidden">
+                                <div className="relative w-24 h-24 md:w-32 md:h-24 bg-slate-100 dark:bg-slate-900 flex-shrink-0 overflow-hidden rounded-md">
                                     <img
                                         src={product.image}
                                         alt={product.name}
                                         loading="lazy"
-                                        className="absolute inset-0 w-full h-full object-cover blur-sm brightness-75 saturate-50 scale-110 group-hover:blur-none group-hover:brightness-100 group-hover:saturate-100 group-hover:scale-105 transition-all duration-500"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent group-hover:opacity-0 transition-opacity duration-500" />
                                 </div>
 
                                 {/* Content */}
@@ -280,8 +276,9 @@ export default function ProductsPage() {
                             </motion.a>
                         ))}
                     </div>
-                )}
-            </section>
-        </div>
+                )
+                }
+            </section >
+        </div >
     );
 }

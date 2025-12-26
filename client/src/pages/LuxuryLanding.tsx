@@ -361,7 +361,7 @@ export default function LuxuryLanding() {
                 Get Verified Now
               </a>
               <a
-                href="#products"
+                href="/products"
                 className="group relative px-8 py-3 text-xs uppercase tracking-widest text-white border border-white/30 hover:border-white transition-colors duration-500 overflow-hidden inline-flex items-center justify-center"
               >
                 <span className="relative z-10 group-hover:text-black transition-colors duration-500">Browse Products</span>
@@ -384,7 +384,7 @@ export default function LuxuryLanding() {
       </section>
 
       {/* Heritage / Story Section */}
-      <section id="heritage" className="py-40 px-8 bg-[#fdfbf7] dark:bg-slate-900 relative overflow-hidden">
+      <section id="heritage" className="py-20 md:py-40 px-6 md:px-8 bg-[#fdfbf7] dark:bg-slate-900 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[#d4af37]/5 dark:bg-[#d4af37]/10 skew-x-12 translate-x-40" />
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center relative z-10">
           <div className="relative group">
@@ -430,7 +430,7 @@ export default function LuxuryLanding() {
       </section>
 
       {/* The Process */}
-      <section className="py-40 bg-[#1a1a1a] text-white relative overflow-hidden">
+      <section className="py-20 md:py-40 bg-[#1a1a1a] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: `url(${digitalNet})`, backgroundSize: 'cover' }} />
         <div className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="text-center mb-24">
@@ -493,14 +493,14 @@ export default function LuxuryLanding() {
       </div>
 
       {/* Services - Concierge */}
-      <section id="services" className="py-40 px-6 bg-[#fdfbf7] dark:bg-slate-900 text-slate-900 dark:text-white relative">
+      <section id="services" className="py-20 md:py-40 px-6 bg-[#fdfbf7] dark:bg-slate-900 text-slate-900 dark:text-white relative">
         <div className="max-w-[1800px] mx-auto">
           <div className="grid lg:grid-cols-12 gap-20">
             <div className="lg:col-span-4 sticky top-40 self-start">
               <span className="text-[#d4af37] text-xs font-bold tracking-[0.4em] uppercase block mb-6">Capabilities</span>
-              <h2 className="font-luxury-heading text-6xl md:text-7xl mb-8 italic leading-none">The Concierge Standard</h2>
+              <h2 className="font-luxury-heading text-6xl md:text-7xl mb-8 italic leading-none">The Panora Standard</h2>
               <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed mb-12">
-                We do not simply move cargo; we engineer its journey. Every shipment is assigned a dedicated concierge manager who oversees every nautical mile.
+                We do not simply move cargo; we engineer its journey. Every shipment is overseen by a dedicated export manager who ensures quality and timeline compliance.
               </p>
               <button className="bg-[#0f172a] dark:bg-slate-800 text-white px-10 py-4 text-sm uppercase tracking-widest hover:bg-[#d4af37] transition-colors duration-500">
                 Download Service Guide
@@ -583,12 +583,12 @@ export default function LuxuryLanding() {
       </ParallaxSection>
 
       {/* Fleet Showcase */}
-      <section id="global-network" className="py-40 bg-[#fdfbf7] dark:bg-slate-900">
+      <section id="global-network" className="py-20 md:py-40 bg-[#fdfbf7] dark:bg-slate-900">
         <div className="max-w-[1800px] mx-auto px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24">
             <div>
               <span className="text-[#d4af37] text-xs font-bold tracking-[0.4em] uppercase block mb-6">Our Assets</span>
-              <h2 className="font-luxury-heading text-6xl md:text-7xl text-slate-900 dark:text-white italic">The Meridian Fleet</h2>
+              <h2 className="font-luxury-heading text-6xl md:text-7xl text-slate-900 dark:text-white italic">The Panora Fleet</h2>
             </div>
             <p className="max-w-md text-slate-500 dark:text-slate-400 text-sm leading-relaxed mt-8 md:mt-0 border-l border-[#d4af37] pl-6">
               From Boeing 747-8F freighters to Triple-E class container vessels, our access to capacity is unmatched in the industry.
@@ -601,7 +601,7 @@ export default function LuxuryLanding() {
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
               <div className="absolute bottom-12 left-12 text-white z-10">
                 <div className="text-[#d4af37] text-xs uppercase tracking-widest mb-3">Maritime</div>
-                <h3 className="font-luxury-heading text-5xl italic group-hover:translate-x-4 transition-transform duration-500">Ocean Class</h3>
+                <h3 className="font-luxury-heading text-5xl italic group-hover:translate-x-4 transition-transform duration-500">Ocean Freight</h3>
               </div>
             </div>
             <div className="md:col-span-4 flex flex-col gap-6">
@@ -627,7 +627,7 @@ export default function LuxuryLanding() {
       </section>
 
       {/* Performance / Analytics */}
-      <section className="py-40 bg-[#0f172a] text-white relative overflow-hidden">
+      <section className="py-20 md:py-40 bg-[#0f172a] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-24 items-center relative z-10">
           <div>
             <span className="text-[#d4af37] text-xs font-bold tracking-[0.4em] uppercase block mb-6">Metrics</span>
@@ -690,11 +690,12 @@ export default function LuxuryLanding() {
       </section>
 
       {/* FAQ Section */}
-      <section id="insights" className="py-40 bg-white dark:bg-slate-900">
+      <section id="insights" className="py-20 md:py-40 bg-white dark:bg-slate-900">
         <div className="max-w-4xl mx-auto px-8">
           <div className="mb-20">
             <span className="text-[#d4af37] text-xs font-bold tracking-[0.4em] uppercase block mb-6">Insights</span>
-            <h2 className="font-luxury-heading text-5xl mb-6 italic text-slate-900 dark:text-white">Frequently Asked</h2>
+            <h2 className="font-luxury-heading text-4xl md:text-5xl mb-6 italic text-slate-900 dark:text-white">Frequently Asked</h2>
+            <a href="/faq" className="text-sm text-[#d4af37] hover:underline underline-offset-4">View All FAQs →</a>
           </div>
 
           <div className="space-y-4">
@@ -717,14 +718,14 @@ export default function LuxuryLanding() {
       </section>
 
       {/* Testimonial */}
-      <section className="py-40 bg-[#1e1e1e] dark:bg-slate-950 text-white text-center px-6 relative overflow-hidden">
+      <section className="py-20 md:py-40 bg-[#1e1e1e] dark:bg-slate-950 text-white text-center px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="flex justify-center gap-2 text-[#d4af37] mb-12">
             {[1, 2, 3, 4, 5].map(i => <Star key={i} fill="#d4af37" className="w-6 h-6" />)}
           </div>
-          <h2 className="font-luxury-heading text-4xl md:text-6xl leading-tight mb-16 italic">
-            "In the world of high-stakes logistics, Meridian has no equal. They handled our entire European expansion with a level of grace and efficiency I didn't think possible."
+          <h2 className="font-luxury-heading text-3xl md:text-5xl leading-tight mb-16 italic">
+            "Panora Exports has transformed our sourcing strategy. Their commitment to quality and transparency is unmatched in the Indian export market."
           </h2>
           <div className="flex items-center justify-center gap-6">
             <div className="w-16 h-16 border border-[#d4af37] rounded-full p-1">
@@ -739,7 +740,7 @@ export default function LuxuryLanding() {
       </section>
 
       {/* Contact Form */}
-      <section id="contact" className="py-40 px-6 bg-[#fdfbf7] dark:bg-slate-900 relative">
+      <section id="contact" className="py-20 md:py-40 px-6 bg-[#fdfbf7] dark:bg-slate-900 relative">
         <div className="max-w-7xl mx-auto bg-white dark:bg-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-[#d4af37]/10 p-12 md:p-24 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent" />
 
@@ -758,7 +759,7 @@ export default function LuxuryLanding() {
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wider text-xs">Headquarters</h4>
-                    <p className="text-slate-500 dark:text-slate-400 font-luxury-heading italic text-xl">1 Knightsbridge Green<br />London, SW1X 7QA</p>
+                    <p className="text-slate-500 dark:text-slate-400 font-luxury-heading italic text-xl">Mumbai, India<br />Global Export Hub</p>
                   </div>
                 </div>
                 <div className="flex gap-6">
@@ -766,40 +767,20 @@ export default function LuxuryLanding() {
                     <Globe strokeWidth={1} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wider text-xs">Global Access</h4>
-                    <p className="text-slate-500 dark:text-slate-400 font-luxury-heading italic text-xl">+44 20 7123 4567<br />concierge@meridian.global</p>
+                    <h4 className="font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wider text-xs">Global Support</h4>
+                    <p className="text-slate-500 dark:text-slate-400 font-luxury-heading italic text-xl">+91 (Support)<br />panoraexports@gmail.com</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <form className="space-y-8 bg-[#fdfbf7]/50 dark:bg-slate-700/30 p-10 border border-[#d4af37]/5">
-              <div className="grid grid-cols-2 gap-8">
-                <div className="space-y-2 group">
-                  <label className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 group-focus-within:text-[#d4af37] transition-colors">First Name</label>
-                  <input type="text" className="w-full border-b border-slate-200 dark:border-slate-600 py-3 focus:outline-none focus:border-[#d4af37] transition-colors bg-transparent dark:text-white font-luxury-heading italic text-xl" />
-                </div>
-                <div className="space-y-2 group">
-                  <label className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 group-focus-within:text-[#d4af37] transition-colors">Last Name</label>
-                  <input type="text" className="w-full border-b border-slate-200 dark:border-slate-600 py-3 focus:outline-none focus:border-[#d4af37] transition-colors bg-transparent dark:text-white font-luxury-heading italic text-xl" />
-                </div>
-              </div>
-              <div className="space-y-2 group">
-                <label className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 group-focus-within:text-[#d4af37] transition-colors">Company</label>
-                <input type="text" className="w-full border-b border-slate-200 dark:border-slate-600 py-3 focus:outline-none focus:border-[#d4af37] transition-colors bg-transparent dark:text-white font-luxury-heading italic text-xl" />
-              </div>
-              <div className="space-y-2 group">
-                <label className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 group-focus-within:text-[#d4af37] transition-colors">Email</label>
-                <input type="email" className="w-full border-b border-slate-200 dark:border-slate-600 py-3 focus:outline-none focus:border-[#d4af37] transition-colors bg-transparent dark:text-white font-luxury-heading italic text-xl" />
-              </div>
-              <div className="space-y-2 group">
-                <label className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 group-focus-within:text-[#d4af37] transition-colors">Requirements</label>
-                <textarea rows={4} className="w-full border-b border-slate-200 dark:border-slate-600 py-3 focus:outline-none focus:border-[#d4af37] transition-colors bg-transparent dark:text-white resize-none font-luxury-heading italic text-xl" />
-              </div>
-              <button type="button" className="bg-[#0f172a] dark:bg-slate-700 text-white px-10 py-5 w-full text-sm uppercase tracking-widest hover:bg-[#d4af37] transition-colors duration-500 mt-6 shadow-xl">
-                Submit Request
-              </button>
-            </form>
+            <div className="bg-[#fdfbf7]/50 dark:bg-slate-700/30 p-10 border border-[#d4af37]/5 flex flex-col justify-center items-center text-center">
+              <h3 className="font-luxury-heading text-3xl text-slate-900 dark:text-white mb-4 italic">Ready to get started?</h3>
+              <p className="text-slate-500 dark:text-slate-400 mb-8 max-w-sm">Use our dedicated contact form or email us directly for the fastest response.</p>
+              <a href="/contact" className="bg-[#0f172a] dark:bg-slate-700 text-white px-10 py-4 text-sm uppercase tracking-widest hover:bg-[#d4af37] transition-colors duration-500 shadow-xl inline-block">
+                Go to Contact Page
+              </a>
+            </div>
           </div>
         </div>
       </section>

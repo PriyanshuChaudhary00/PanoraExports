@@ -132,25 +132,15 @@ export default function CategoriesPage() {
                             transition={{ duration: 0.3, delay: index * 0.05 }}
                             className="group bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 hover:border-slate-300 dark:hover:border-slate-700 transition-all hover:shadow-lg overflow-hidden"
                         >
-                            {/* Image Container with Blurred Thumbnail */}
+                            {/* Image Container */}
                             <div className="relative aspect-[16/10] bg-slate-100 dark:bg-slate-900 overflow-hidden">
-                                {/* Blurred Thumbnail - Default State */}
                                 <img
                                     src={category.image}
                                     alt={category.name}
                                     loading="lazy"
-                                    className="absolute inset-0 w-full h-full object-cover blur-lg brightness-75 saturate-50 scale-110 group-hover:blur-none group-hover:brightness-100 group-hover:saturate-100 group-hover:scale-105 transition-all duration-700"
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
-
-                                {/* Gradient Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent group-hover:from-black/60 transition-all duration-500" />
-
-                                {/* Category Name Overlay on Hover */}
-                                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                    <h2 className="text-3xl font-bold text-white drop-shadow-lg">
-                                        {category.name}
-                                    </h2>
-                                </div>
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
                             </div>
 
                             {/* Compact Content */}

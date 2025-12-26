@@ -15,6 +15,8 @@ import AboutPage from "@/app/about/page";
 import LoginPage from "@/app/auth/login/page";
 import RegisterPage from "@/app/auth/register/page";
 import AdminDashboard from "@/app/admin/page";
+import FAQPage from "@/app/faq/page";
+import ContactPage from "@/app/contact/page";
 import { useEffect } from "react";
 
 function Router() {
@@ -29,7 +31,10 @@ function Router() {
       <Route path="/about" component={AboutPage} />
       <Route path="/auth/login" component={LoginPage} />
       <Route path="/auth/register" component={RegisterPage} />
+
       <Route path="/admin" component={AdminDashboard} />
+      <Route path="/faq" component={FAQPage} />
+      <Route path="/contact" component={ContactPage} />
       <Route component={NotFound} />
     </Switch>
   );
