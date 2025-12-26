@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Lock, Eye, EyeOff, ArrowRight, Loader2 } from 'lucide-react';
-import { useLocation } from 'wouter';
+import { useLocation, Link } from 'wouter';
 import { useAuth } from '@/contexts/AuthContext';
 import { useToast } from '@/hooks/use-toast';
 import { isAdminCredentials } from '@/lib/rbac';
@@ -77,11 +77,11 @@ export default function LoginPage() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12"
                 >
-                    <a href="/" className="inline-block">
+                    <Link href="/" className="inline-block">
                         <h1 className="font-luxury-heading text-5xl italic font-bold text-slate-900 dark:text-white">
                             Panora<span className="text-[#C05800]">Exports</span>
                         </h1>
-                    </a>
+                    </Link>
                     <p className="text-slate-500 dark:text-slate-400 mt-4 text-sm uppercase tracking-[0.3em]">
                         India's Export Partner
                     </p>
@@ -158,12 +158,12 @@ export default function LoginPage() {
                                     Remember me
                                 </span>
                             </label>
-                            <a
+                            <Link
                                 href="/auth/forgot-password"
                                 className="text-[#C05800] hover:underline"
                             >
                                 Forgot password?
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Submit Button */}
@@ -199,12 +199,12 @@ export default function LoginPage() {
                     </div>
 
                     {/* Register Link */}
-                    <a
+                    <Link
                         href="/auth/register"
                         className="block w-full text-center border border-[#C05800] text-[#C05800] py-4 text-sm uppercase tracking-widest font-medium hover:bg-[#C05800] hover:text-white transition-all duration-300"
                     >
                         Create Account
-                    </a>
+                    </Link>
                 </motion.div>
 
                 {/* Back to Home */}
@@ -214,12 +214,12 @@ export default function LoginPage() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="text-center mt-8"
                 >
-                    <a
+                    <Link
                         href="/"
                         className="text-sm text-slate-500 dark:text-slate-400 hover:text-[#C05800] transition-colors inline-flex items-center gap-2"
                     >
                         ← Back to Home
-                    </a>
+                    </Link>
                 </motion.div>
             </div>
         </div>

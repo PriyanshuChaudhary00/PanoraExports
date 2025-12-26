@@ -6,6 +6,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useTheme } from "next-themes";
+import { Link } from "wouter";
+import Navigation from "@/components/Navigation";
 
 // Assets
 import jetInterior from "@assets/stock_images/private_jet_interior_81593a0e.jpg";
@@ -192,126 +194,7 @@ export default function LuxuryLanding() {
         style={{ scaleX }}
       />
 
-      {/* Navigation - Minimalist Modern */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-slate-200/50 dark:border-slate-700/50">
-        <div className="max-w-[1600px] mx-auto px-8 md:px-12 h-20 flex items-center justify-between">
-          {/* Logo - Left */}
-          <a href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-slate-900 dark:bg-white rounded-sm flex items-center justify-center">
-              <span className="text-white dark:text-slate-900 font-bold text-xs">PE</span>
-            </div>
-            <span className="font-bold text-lg tracking-tight text-slate-900 dark:text-white">PANORA</span>
-          </a>
-
-          {/* Center Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            <a
-              href="/products"
-              className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              Products
-            </a>
-            <a
-              href="/categories"
-              className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              Categories
-            </a>
-            <a
-              href="/verification"
-              className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              Verification
-            </a>
-            <a
-              href="/about"
-              className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              About
-            </a>
-          </div>
-
-          {/* Right Actions */}
-          <div className="flex items-center gap-4">
-            {/* Language/Region */}
-            <button className="hidden md:block text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
-              ENG
-            </button>
-
-            {/* Theme Toggle */}
-            {mounted && (
-              <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="hidden md:flex w-9 h-9 items-center justify-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-                aria-label="Toggle theme"
-              >
-                {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-              </button>
-            )}
-
-            {/* Contact Button */}
-            <a
-              href="/auth/login"
-              className="hidden md:block text-sm font-medium text-slate-900 dark:text-white border-b-2 border-slate-900 dark:border-white pb-0.5 hover:opacity-70 transition-opacity"
-            >
-              SIGN IN
-            </a>
-
-            {/* Mobile Menu */}
-            <button
-              className="lg:hidden w-9 h-9 flex items-center justify-center text-slate-900 dark:text-white"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: isMenuOpen ? 1 : 0, height: isMenuOpen ? "auto" : 0 }}
-          className="lg:hidden overflow-hidden bg-white dark:bg-slate-900 border-t border-slate-200/50 dark:border-slate-700/50"
-        >
-          <div className="flex flex-col gap-4 p-8">
-            <a
-              href="/products"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              Products
-            </a>
-            <a
-              href="/categories"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              Categories
-            </a>
-            <a
-              href="/verification"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              Verification
-            </a>
-            <a
-              href="/about"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              About
-            </a>
-            <a
-              href="/auth/login"
-              className="text-sm font-medium text-slate-900 dark:text-white mt-4 inline-block"
-            >
-              SIGN IN →
-            </a>
-          </div>
-        </motion.div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden dark:bg-slate-900">
@@ -354,19 +237,19 @@ export default function LuxuryLanding() {
               Connect verified buyers worldwide with India's finest exports. From textiles to agriculture, we make global trade seamless and secure.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a
+              <Link
                 href="/auth/register"
                 className="bg-[#C05800] text-white px-8 py-3 text-xs uppercase tracking-widest hover:bg-white hover:text-[#C05800] transition-all duration-500 shadow-[0_0_30px_rgba(212,175,55,0.3)] border border-[#C05800] inline-flex items-center justify-center"
               >
                 Get Verified Now
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/products"
                 className="group relative px-8 py-3 text-xs uppercase tracking-widest text-white border border-white/30 hover:border-white transition-colors duration-500 overflow-hidden inline-flex items-center justify-center"
               >
                 <span className="relative z-10 group-hover:text-black transition-colors duration-500">Browse Products</span>
                 <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -695,7 +578,7 @@ export default function LuxuryLanding() {
           <div className="mb-20">
             <span className="text-[#C05800] text-xs font-bold tracking-[0.4em] uppercase block mb-6">Insights</span>
             <h2 className="font-luxury-heading text-4xl md:text-5xl mb-6 italic text-slate-900 dark:text-white">Frequently Asked</h2>
-            <a href="/faq" className="text-sm text-[#C05800] hover:underline underline-offset-4">View All FAQs →</a>
+            <Link href="/faq" className="text-sm text-[#C05800] hover:underline underline-offset-4">View All FAQs →</Link>
           </div>
 
           <div className="space-y-4">
@@ -777,9 +660,9 @@ export default function LuxuryLanding() {
             <div className="bg-[#FDFBD4]/50 dark:bg-slate-700/30 p-10 border border-[#C05800]/5 flex flex-col justify-center items-center text-center">
               <h3 className="font-luxury-heading text-3xl text-slate-900 dark:text-white mb-4 italic">Ready to get started?</h3>
               <p className="text-slate-500 dark:text-slate-400 mb-8 max-w-sm">Use our dedicated contact form or email us directly for the fastest response.</p>
-              <a href="/contact" className="bg-[#0f172a] dark:bg-slate-700 text-white px-10 py-4 text-sm uppercase tracking-widest hover:bg-[#C05800] transition-colors duration-500 shadow-xl inline-block">
+              <Link href="/contact" className="bg-[#0f172a] dark:bg-slate-700 text-white px-10 py-4 text-sm uppercase tracking-widest hover:bg-[#C05800] transition-colors duration-500 shadow-xl inline-block">
                 Go to Quotation Page
-              </a>
+              </Link>
             </div>
           </div>
         </div>

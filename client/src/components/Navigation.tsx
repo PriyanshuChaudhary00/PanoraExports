@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon, LogOut, User as UserIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import { useLocation } from 'wouter';
+import { useLocation, Link } from 'wouter';
 import { useAuth } from '@/contexts/AuthContext';
 import { isAdmin } from '@/lib/rbac';
 
@@ -21,16 +21,16 @@ export default function Navigation() {
         <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FDFBD4]/80 dark:bg-[#38240D]/80 backdrop-blur-lg border-b border-[#C05800]/20">
             <div className="max-w-[1600px] mx-auto px-8 md:px-12 h-20 flex items-center justify-between">
                 {/* Logo - Left */}
-                <a href="/" className="flex items-center gap-2 group">
+                <Link href="/" className="flex items-center gap-2 group">
                     <div className="w-8 h-8 bg-[#713600] dark:bg-[#FDFBD4] rounded-sm flex items-center justify-center">
                         <span className="text-white dark:text-[#38240D] font-bold text-xs">PE</span>
                     </div>
                     <span className="font-bold text-lg tracking-tight text-[#38240D] dark:text-[#FDFBD4]">PANORA</span>
-                </a>
+                </Link>
 
                 {/* Center Navigation */}
                 <div className="hidden lg:flex items-center gap-8">
-                    <a
+                    <Link
                         href="/products"
                         className={`text-sm transition-colors ${location === '/products'
                             ? 'text-slate-900 dark:text-white font-medium'
@@ -38,8 +38,8 @@ export default function Navigation() {
                             }`}
                     >
                         Products
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href="/categories"
                         className={`text-sm transition-colors ${location === '/categories'
                             ? 'text-slate-900 dark:text-white font-medium'
@@ -47,8 +47,8 @@ export default function Navigation() {
                             }`}
                     >
                         Categories
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href="/verification"
                         className={`text-sm transition-colors ${location === '/verification'
                             ? 'text-slate-900 dark:text-white font-medium'
@@ -56,8 +56,8 @@ export default function Navigation() {
                             }`}
                     >
                         Verification
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href="/faq"
                         className={`text-sm transition-colors ${location === '/faq'
                             ? 'text-slate-900 dark:text-white font-medium'
@@ -65,8 +65,8 @@ export default function Navigation() {
                             }`}
                     >
                         FAQ
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href="/contact"
                         className={`text-sm transition-colors ${location === '/contact'
                             ? 'text-slate-900 dark:text-white font-medium'
@@ -74,8 +74,8 @@ export default function Navigation() {
                             }`}
                     >
                         Contact
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href="/about"
                         className={`text-sm transition-colors ${location === '/about'
                             ? 'text-slate-900 dark:text-white font-medium'
@@ -83,10 +83,10 @@ export default function Navigation() {
                             }`}
                     >
                         About
-                    </a>
+                    </Link>
                     {/* Admin Link - Show only for admin users */}
                     {userIsAdmin && (
-                        <a
+                        <Link
                             href="/admin"
                             className={`flex items-center gap-1.5 text-sm transition-colors ${location === '/admin'
                                 ? 'text-purple-600 dark:text-purple-400 font-medium'
@@ -97,7 +97,7 @@ export default function Navigation() {
                             <span className="px-1.5 py-0.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 text-[10px] font-bold rounded">
                                 ⚡
                             </span>
-                        </a>
+                        </Link>
                     )}
                 </div>
 
@@ -141,12 +141,12 @@ export default function Navigation() {
                             </button>
                         </div>
                     ) : (
-                        <a
+                        <Link
                             href="/auth/login"
                             className="hidden md:block text-sm font-medium text-[#38240D] dark:text-[#FDFBD4] border-b-2 border-[#C05800] pb-0.5 hover:opacity-70 transition-opacity"
                         >
                             SIGN IN
-                        </a>
+                        </Link>
                     )}
 
                     {/* Mobile Menu */}
@@ -164,50 +164,50 @@ export default function Navigation() {
             {isMenuOpen && (
                 <div className="lg:hidden bg-white dark:bg-slate-900 border-t border-slate-200/50 dark:border-slate-700/50">
                     <div className="flex flex-col gap-4 p-8">
-                        <a
+                        <Link
                             href="/products"
                             onClick={() => setIsMenuOpen(false)}
                             className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                         >
                             Products
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href="/categories"
                             onClick={() => setIsMenuOpen(false)}
                             className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                         >
                             Categories
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href="/verification"
                             onClick={() => setIsMenuOpen(false)}
                             className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                         >
                             Verification
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href="/faq"
                             onClick={() => setIsMenuOpen(false)}
                             className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                         >
                             FAQ
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href="/contact"
                             onClick={() => setIsMenuOpen(false)}
                             className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                         >
                             Contact
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href="/about"
                             onClick={() => setIsMenuOpen(false)}
                             className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                         >
                             About
-                        </a>
+                        </Link>
                         {userIsAdmin && (
-                            <a
+                            <Link
                                 href="/admin"
                                 onClick={() => setIsMenuOpen(false)}
                                 className="flex items-center gap-2 text-sm text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors font-medium"
@@ -216,7 +216,7 @@ export default function Navigation() {
                                 <span className="px-1.5 py-0.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 text-[10px] font-bold rounded">
                                     ⚡
                                 </span>
-                            </a>
+                            </Link>
                         )}
 
                         {user ? (
@@ -243,12 +243,12 @@ export default function Navigation() {
                                 </div>
                             </>
                         ) : (
-                            <a
+                            <Link
                                 href="/auth/login"
                                 className="text-sm font-medium text-slate-900 dark:text-white mt-4 inline-block"
                             >
                                 SIGN IN →
-                            </a>
+                            </Link>
                         )}
                     </div>
                 </div>

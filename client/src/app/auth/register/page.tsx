@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Lock, Eye, EyeOff, ArrowRight, Loader2, User, Phone, Globe, Building2, ShoppingBag } from 'lucide-react';
-import { useLocation } from 'wouter';
+import { useLocation, Link } from 'wouter';
 import { useAuth } from '@/contexts/AuthContext';
 import { useToast } from '@/hooks/use-toast';
 
@@ -111,11 +111,11 @@ export default function RegisterPage() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12"
                 >
-                    <a href="/" className="inline-block">
+                    <Link href="/" className="inline-block">
                         <h1 className="font-luxury-heading text-5xl italic font-bold text-slate-900 dark:text-white">
                             Panora<span className="text-[#C05800]">Exports</span>
                         </h1>
-                    </a>
+                    </Link>
                     <p className="text-slate-500 dark:text-slate-400 mt-4 text-sm uppercase tracking-[0.3em]">
                         Join India's Premier Export Platform
                     </p>
@@ -317,13 +317,13 @@ export default function RegisterPage() {
                                     />
                                     <label className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                                         I agree to Panora Exports{' '}
-                                        <a href="/terms" className="text-[#C05800] hover:underline">
+                                        <Link href="/terms" className="text-[#C05800] hover:underline">
                                             Terms of Service
-                                        </a>{' '}
+                                        </Link>{' '}
                                         and{' '}
-                                        <a href="/privacy" className="text-[#C05800] hover:underline">
+                                        <Link href="/privacy" className="text-[#C05800] hover:underline">
                                             Privacy Policy
-                                        </a>
+                                        </Link>
                                     </label>
                                 </div>
 
@@ -357,12 +357,12 @@ export default function RegisterPage() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="text-center mt-8"
                 >
-                    <a
+                    <Link
                         href="/"
                         className="text-sm text-slate-500 dark:text-slate-400 hover:text-[#C05800] transition-colors inline-flex items-center gap-2"
                     >
                         ← Back to Home
-                    </a>
+                    </Link>
                 </motion.div>
             </div>
         </div>
