@@ -37,8 +37,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
         // Listen for auth changes
         try {
-            const { data: { subscription } } = authService.onAuthStateChange((user) => {
-                setUser(user);
+            const { data: { subscription } } = authService.onAuthStateChange((sbUser) => {
+                if (sbUser) {
+                    setUser(sbUser);
+                } else {
+                    // Check if we have a local admin session before clearing
+                    const localAdmin = localStorage.getItem('panora_admin_session');
+                    if (localAdmin) {
+                        setUser(JSON.parse(localAdmin));
+                    } else {
+                        setUser(null);
+                    }
+                }
                 setLoading(false);
             });
 
