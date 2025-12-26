@@ -202,15 +202,15 @@ export default function ProductsPage() {
                                 transition={{ duration: 0.3, delay: index * 0.05 }}
                                 className="group block bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/50 hover:border-slate-300 dark:hover:border-slate-700 transition-all hover:shadow-lg"
                             >
-                                {/* Product Image - Always Clear */}
-                                <div className="relative aspect-[4/3] bg-slate-100 dark:bg-slate-900 overflow-hidden">
+                                {/* Product Image - Blur to Clear on Hover */}
+                                <div className="relative w-full h-full">
                                     <img
                                         src={product.image}
                                         alt={product.name}
                                         loading="lazy"
-                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        className="absolute inset-0 w-full h-full object-cover transition-all duration-700 md:group-hover:scale-105 blur-[2px] md:grayscale md:group-hover:grayscale-0 md:group-hover:blur-0 group-hover:blur-0"
                                     />
-                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
+                                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
                                 </div>
 
                                 {/* Compact Content */}
@@ -251,7 +251,7 @@ export default function ProductsPage() {
                                         src={product.image}
                                         alt={product.name}
                                         loading="lazy"
-                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        className="absolute inset-0 w-full h-full object-cover transition-all duration-500 blur-[1px] group-hover:blur-0 md:group-hover:scale-105"
                                     />
                                 </div>
 

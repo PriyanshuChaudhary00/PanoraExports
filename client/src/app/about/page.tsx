@@ -1,278 +1,128 @@
 'use client';
 
-import { Target, Users, Globe, TrendingUp, Award, Heart, Zap, Shield } from 'lucide-react';
+import { motion } from 'framer-motion';
 import Navigation from '@/components/Navigation';
-
-const stats = [
-    { value: '500+', label: 'Verified Sellers' },
-    { value: '1,200+', label: 'Active Buyers' },
-    { value: '50+', label: 'Countries' },
-    { value: '10+', label: 'Categories' },
-];
-
-const values = [
-    {
-        icon: Shield,
-        title: 'Trust & Transparency',
-        description: 'We verify every business on our platform to ensure authentic, secure B2B transactions.',
-    },
-    {
-        icon: Globe,
-        title: 'Global Reach',
-        description: 'Connecting Indian exporters with verified buyers across 50+ countries worldwide.',
-    },
-    {
-        icon: Zap,
-        title: 'Speed & Efficiency',
-        description: 'Streamlined processes from verification to order fulfillment, making trade seamless.',
-    },
-    {
-        icon: Heart,
-        title: 'Customer First',
-        description: 'Dedicated support team available 24/7 to assist with your export journey.',
-    },
-];
-
-const team = [
-    {
-        name: 'Rajesh Kumar',
-        role: 'Founder & CEO',
-        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
-    },
-    {
-        name: 'Priya Sharma',
-        role: 'Head of Operations',
-        image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
-    },
-    {
-        name: 'Amit Patel',
-        role: 'Chief Technology Officer',
-        image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop',
-    },
-    {
-        name: 'Sneha Reddy',
-        role: 'Head of Verification',
-        image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
-    },
-];
-
-const milestones = [
-    { year: '1985', title: 'Founded', description: 'Panora Exports established with a vision to connect India to the world' },
-    { year: '2010', title: 'Digital Transformation', description: 'Launched our first online B2B platform' },
-    { year: '2018', title: 'Global Expansion', description: 'Reached 50+ countries with verified buyer network' },
-    { year: '2024', title: 'Innovation Leader', description: 'Introduced AI-powered verification and matching' },
-];
+import { Shield, Award, Briefcase, CheckCircle, FileCheck, Globe, Building2, User } from 'lucide-react';
 
 export default function AboutPage() {
     return (
-        <div className="min-h-screen bg-white dark:bg-slate-950 pt-20">
+        <div className="min-h-screen bg-[#fdfbf7] dark:bg-slate-950 pt-20 font-sans selection:bg-[#d4af37] selection:text-white">
             <Navigation />
-            {/* Hero Section */}
-            <section className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
-                <div className="max-w-[1600px] mx-auto px-8 md:px-12 py-20">
-                    <div className="max-w-4xl">
-                        <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
-                            Connecting India's<br />Finest Exports to the World
+
+            {/* Hero Section - Minimalist & Impactful */}
+            <section className="relative py-32 overflow-hidden">
+                <div className="absolute inset-0 bg-slate-50 dark:bg-slate-900/50 -z-10" />
+                <div className="absolute top-0 right-0 w-1/3 h-full bg-[#d4af37]/5 skew-x-12 translate-x-20" />
+
+                <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="max-w-4xl"
+                    >
+                        <span className="text-[#d4af37] text-xs font-bold tracking-[0.4em] uppercase block mb-6">
+                            Our Essence
+                        </span>
+                        <h1 className="font-luxury-heading text-5xl md:text-7xl text-slate-900 dark:text-white mb-8 italic leading-tight">
+                            Curating Trust in <br />
+                            <span className="text-slate-400 dark:text-slate-600 not-italic">Global Trade.</span>
                         </h1>
-                        <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
-                            Since 1985, Panora Exports has been India's premier B2B platform, connecting verified buyers with trusted export categories including Textiles, Agriculture, Hardware, Handicrafts, and Spices. We ensure quality, authenticity, and seamless global trade.
+                        <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed font-light max-w-2xl border-l-2 border-[#d4af37] pl-6">
+                            Panora Exports isn't just a platform; it's a commitment to authenticity. We bridge the gap between India's finest artisans and the world's most discerning buyers through a lens of uncompromised quality.
                         </p>
-                        <div className="flex flex-wrap gap-4">
-                            <a
-                                href="/auth/register"
-                                className="inline-block px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium hover:opacity-90 transition-opacity"
-                            >
-                                GET STARTED
-                            </a>
-                            <a
-                                href="/products"
-                                className="inline-block px-8 py-4 border border-slate-900 dark:border-white text-slate-900 dark:text-white text-sm font-medium hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-colors"
-                            >
-                                BROWSE PRODUCTS
-                            </a>
-                        </div>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 
-            {/* Stats Section */}
-            <section className="border-b border-slate-200 dark:border-slate-800">
-                <div className="max-w-[1600px] mx-auto px-8 md:px-12 py-16">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        {stats.map((stat, index) => (
-                            <div key={index} className="text-center">
-                                <p className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-2">
-                                    {stat.value}
-                                </p>
-                                <p className="text-sm text-slate-600 dark:text-slate-400">
-                                    {stat.label}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Mission & Vision */}
-            <section className="max-w-[1600px] mx-auto px-8 md:px-12 py-20">
-                <div className="grid md:grid-cols-2 gap-16">
-                    <div>
-                        <div className="w-12 h-12 bg-slate-100 dark:bg-slate-900 flex items-center justify-center mb-6">
-                            <Target className="w-6 h-6 text-slate-900 dark:text-white" />
-                        </div>
-                        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                            Our Mission
-                        </h2>
-                        <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                            To empower Indian exporters by providing a trusted, efficient, and transparent B2B platform that connects them with verified buyers worldwide, ensuring quality and authenticity in every transaction.
-                        </p>
-                    </div>
-                    <div>
-                        <div className="w-12 h-12 bg-slate-100 dark:bg-slate-900 flex items-center justify-center mb-6">
-                            <TrendingUp className="w-6 h-6 text-slate-900 dark:text-white" />
-                        </div>
-                        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                            Our Vision
-                        </h2>
-                        <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                            To become the world's most trusted B2B export platform, recognized for innovation, reliability, and our commitment to making global trade accessible to businesses of all sizes.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Values Section */}
-            <section className="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
-                <div className="max-w-[1600px] mx-auto px-8 md:px-12 py-20">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-                            Our Core Values
-                        </h2>
-                        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                            The principles that guide everything we do
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {values.map((value, index) => (
-                            <div
-                                key={index}
-                                className="border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-8 hover:border-slate-400 dark:hover:border-slate-600 transition-colors"
+            {/* Trust & Psychology Section */}
+            <section className="py-24 bg-white dark:bg-slate-900">
+                <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+                    <div className="grid md:grid-cols-3 gap-12">
+                        {[
+                            {
+                                icon: Shield,
+                                title: "Unwavering Integrity",
+                                desc: "In an industry clouded by uncertainty, we stand as a beacon of transparency. Every supplier is vetted, every product verified."
+                            },
+                            {
+                                icon: Award,
+                                title: "Curated Excellence",
+                                desc: "We don't chase volume; we pursue value. Our catalog is a handpicked collection of India's premium export capabilities."
+                            },
+                            {
+                                icon: Globe,
+                                title: "Borderless Vision",
+                                desc: "We understand the psychology of global business—reliability, speed, and precision are the universal languages we speak."
+                            }
+                        ].map((item, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.2, duration: 0.6 }}
+                                className="group p-8 border border-slate-100 dark:border-slate-800 hover:border-[#d4af37]/30 hover:bg-[#fdfbf7] dark:hover:bg-slate-800/50 transition-all duration-500"
                             >
-                                <div className="w-12 h-12 bg-slate-100 dark:bg-slate-900 flex items-center justify-center mb-6">
-                                    <value.icon className="w-6 h-6 text-slate-900 dark:text-white" />
+                                <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white mb-6 group-hover:text-[#d4af37] transition-colors">
+                                    <item.icon strokeWidth={1.5} />
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
-                                    {value.title}
-                                </h3>
-                                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                                    {value.description}
-                                </p>
-                            </div>
+                                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-[#d4af37] transition-colors">{item.title}</h3>
+                                <p className="text-slate-500 dark:text-slate-400 leading-loose text-sm">{item.desc}</p>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Timeline Section */}
-            <section className="max-w-[1600px] mx-auto px-8 md:px-12 py-20">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-                        Our Journey
-                    </h2>
-                    <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                        Four decades of excellence in global trade
-                    </p>
-                </div>
+            {/* Leadership Section - Single Member */}
+            <section className="py-32 bg-[#1a1a1a] text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5" />
+                <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+                    <div className="w-20 h-1 bg-[#d4af37] mx-auto mb-12" />
+                    <h2 className="font-luxury-heading text-4xl md:text-5xl italic mb-12">The Leadership</h2>
 
-                <div className="relative">
-                    {/* Timeline line */}
-                    <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-800" />
-
-                    <div className="space-y-12">
-                        {milestones.map((milestone, index) => (
-                            <div
-                                key={index}
-                                className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                                    }`}
-                            >
-                                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
-                                    <div className="border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-6 hover:border-slate-400 dark:hover:border-slate-600 transition-colors">
-                                        <div className="text-3xl font-bold text-slate-300 dark:text-slate-700 mb-2">
-                                            {milestone.year}
-                                        </div>
-                                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                                            {milestone.title}
-                                        </h3>
-                                        <p className="text-slate-600 dark:text-slate-400">
-                                            {milestone.description}
-                                        </p>
-                                    </div>
-                                </div>
-                                {/* Timeline dot */}
-                                <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-slate-900 dark:bg-white border-4 border-white dark:border-slate-950 rounded-full -translate-x-1/2" />
-                            </div>
-                        ))}
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-12 md:p-16 max-w-2xl mx-auto hover:border-[#d4af37]/50 transition-colors duration-500">
+                        <div className="w-24 h-24 mx-auto bg-[#d4af37]/20 rounded-full flex items-center justify-center mb-8 border border-[#d4af37]">
+                            <span className="font-luxury-heading text-4xl italic text-[#d4af37]">R</span>
+                        </div>
+                        <h3 className="text-2xl font-bold mb-2 tracking-wide">Rishabh</h3>
+                        <p className="text-[#d4af37] text-xs uppercase tracking-[0.3em] mb-8">Founder & Visionary</p>
+                        <p className="text-slate-300 leading-relaxed font-light italic text-lg">
+                            "True luxury in trade lies in the peace of mind. At Panora Exports, we are not just moving goods; we are upholding a legacy of Indian craftsmanship and delivering promises globally."
+                        </p>
                     </div>
                 </div>
             </section>
 
-            {/* Team Section */}
-            <section className="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
-                <div className="max-w-[1600px] mx-auto px-8 md:px-12 py-20">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-                            Meet Our Team
-                        </h2>
-                        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                            The people behind Panora Exports' success
+            {/* Certifications & Authenticity */}
+            <section className="py-32 bg-[#fdfbf7] dark:bg-slate-950">
+                <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+                        <div>
+                            <span className="text-[#d4af37] text-xs font-bold tracking-[0.4em] uppercase block mb-4">Authenticity</span>
+                            <h2 className="font-luxury-heading text-4xl md:text-5xl text-slate-900 dark:text-white italic">Verified & Certified</h2>
+                        </div>
+                        <p className="text-slate-500 dark:text-slate-400 max-w-md text-right mt-6 md:mt-0">
+                            Our commitment to compliance is absolute. We hold all necessary certifications to ensure frictionless global trade.
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {team.map((member, index) => (
-                            <div key={index} className="text-center group">
-                                <div className="aspect-square bg-slate-200 dark:bg-slate-800 mb-4 overflow-hidden">
-                                    <img
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                    />
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        {[
+                            { name: "Import Export Code", sub: "Govt. of India", icon: FileCheck },
+                            { name: "GST Registered", sub: "Tax Compliance", icon: Building2 },
+                            { name: "FIEO Member", sub: "Export Federation", icon: Globe },
+                            { name: "ISO 9001:2015", sub: "Quality Management", icon: CheckCircle },
+                        ].map((cert, i) => (
+                            <div key={i} className="aspect-[4/3] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center p-6 text-center hover:shadow-2xl hover:shadow-[#d4af37]/5 transition-all duration-500 group">
+                                <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <cert.icon className="w-8 h-8 text-slate-400 group-hover:text-[#d4af37] transition-colors" strokeWidth={1} />
                                 </div>
-                                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
-                                    {member.name}
-                                </h3>
-                                <p className="text-sm text-slate-600 dark:text-slate-400">
-                                    {member.role}
-                                </p>
+                                <div className="h-px w-8 bg-slate-200 dark:bg-slate-700 mb-4 group-hover:bg-[#d4af37] transition-colors" />
+                                <h4 className="font-bold text-slate-900 dark:text-white text-sm uppercase tracking-wider mb-1">{cert.name}</h4>
+                                <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">{cert.sub}</p>
                             </div>
                         ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="border-t border-slate-200 dark:border-slate-800">
-                <div className="max-w-[1600px] mx-auto px-8 md:px-12 py-20 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
-                        Join Our Growing Network
-                    </h2>
-                    <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
-                        Whether you're a seller looking to expand globally or a buyer seeking quality Indian exports, we're here to help.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a
-                            href="/auth/register"
-                            className="inline-block px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium hover:opacity-90 transition-opacity"
-                        >
-                            GET VERIFIED NOW
-                        </a>
-                        <a
-                            href="/products"
-                            className="inline-block px-8 py-4 border border-slate-900 dark:border-white text-slate-900 dark:text-white text-sm font-medium hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-colors"
-                        >
-                            BROWSE PRODUCTS
-                        </a>
                     </div>
                 </div>
             </section>
