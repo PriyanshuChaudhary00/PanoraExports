@@ -11,19 +11,30 @@ import {
   FileCheck,
   Shield,
   Globe,
-  ArrowRight,
-  TrendingUp,
-  Box
+  ArrowRight
 } from "lucide-react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
-// Assets
-import containerShip from "@assets/stock_images/luxury_container_shi_990cf15c.jpg";
-import logisticsImage from "@assets/stock_images/modern_automated_log_e4071bac.jpg";
 const heroImage = "/aeroplane.jpg";
 
-// --- Components ---
+const productsList = [
+  { title: "Cotton Textiles", img: "https://plus.unsplash.com/premium_photo-1673125287363-b4e837f1215f?q=80&w=687&auto=format&fit=crop" },
+  { title: "Towels & Fabrics", img: "https://images.unsplash.com/photo-1617811449482-31093c8cee16?q=80&w=735&auto=format&fit=crop" },
+  { title: "Agro Commodities", img: "https://plus.unsplash.com/premium_photo-1674624682288-085eff4f98da?q=80&w=687&auto=format&fit=crop" },
+  { title: "Industrial Goods", img: "https://images.unsplash.com/photo-1623610590744-fce60d8dd48c?q=80&w=687&auto=format&fit=crop" },
+  { title: "Organic Spices", img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=800&auto=format&fit=crop" },
+  { title: "Leather Goods", img: "https://images.unsplash.com/photo-1524333865981-3a33a08c07c8?q=80&w=800&auto=format&fit=crop" },
+  { title: "Handicrafts", img: "https://images.unsplash.com/photo-1513519245088-0e12902e35a6?q=80&w=800&auto=format&fit=crop" }
+];
 
 const Grain = () => (
   <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[9999] mix-blend-overlay"
@@ -51,7 +62,6 @@ const ExportCard = ({ icon: Icon, title, desc }: { icon: any, title: string, des
 );
 
 export default function LuxuryLanding() {
-
   return (
     <div className="font-sans bg-background text-foreground selection:bg-primary selection:text-primary-foreground antialiased">
       <Grain />
@@ -68,7 +78,6 @@ export default function LuxuryLanding() {
             alt="Hero Background"
             className="absolute inset-0 w-full h-full object-cover scale-[1.01] brightness-[1.1]"
           />
-          {/* Subtle gradient overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent z-10" />
         </div>
 
@@ -108,7 +117,6 @@ export default function LuxuryLanding() {
               </a>
             </div>
 
-            {/* Bottom Metrics */}
             <div className="mt-16 flex items-center gap-12 border-t border-border pt-8">
               <div>
                 <div className="text-2xl font-bold text-primary tracking-tight">100%</div>
@@ -184,38 +192,65 @@ export default function LuxuryLanding() {
       </Section>
 
       {/* 4. PRODUCT PREVIEW */}
-      <Section id="products" className="bg-secondary/30 py-24">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div>
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-[1.5px] bg-primary" />
-              <h2 className="text-[10px] font-bold text-foreground uppercase tracking-[0.3em]">Our Collection</h2>
-            </div>
-            <h3 className="text-3xl md:text-5xl font-bold text-foreground tracking-tight">Browse <span className="font-serif italic font-light opacity-80">Products.</span></h3>
-          </div>
-          <Link href="/products" className="group text-foreground font-bold text-[10px] uppercase tracking-[0.2em] flex items-center gap-2 hover:gap-4 transition-all border-b border-border pb-1.5">
-            View All Products <ArrowRight className="w-4 h-4" />
-          </Link>
+      <Section id="products" className="bg-secondary/30 py-24 overflow-hidden">
+        <div className="text-center mb-16">
+          <h3 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight uppercase">Browse <span className="font-serif italic font-light opacity-80">Products</span></h3>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { title: "Cotton Textiles", img: "https://plus.unsplash.com/premium_photo-1673125287363-b4e837f1215f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-            { title: "Towels & Fabrics", img: "https://images.unsplash.com/photo-1617811449482-31093c8cee16?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-            { title: "Agro Commodities", img: "https://plus.unsplash.com/premium_photo-1674624682288-085eff4f98da?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-            { title: "Industrial Goods", img: "https://images.unsplash.com/photo-1623610590744-fce60d8dd48c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }
-          ].map((item, i) => (
-            <Link key={i} href="/products" className="group block">
-              <div className="aspect-[1/1] overflow-hidden bg-card mb-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="text-xs font-bold text-foreground uppercase tracking-wider text-center group-hover:text-primary transition-colors">{item.title}</h3>
-            </Link>
-          ))}
+        <div className="relative max-w-5xl mx-auto px-4 md:px-0">
+          <Carousel
+            opts={{
+              align: "center",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 4000,
+                stopOnInteraction: false,
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent className="">
+              {productsList.map((item, i) => (
+                <CarouselItem key={i} className="basis-full">
+                  <Link href="/products" className="group block relative">
+                    <div className="aspect-[16/9] overflow-hidden bg-card rounded-2xl shadow-2xl relative ring-1 ring-primary/10">
+                      <img
+                        src={item.img}
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12">
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.2 }}
+                        >
+                          <h4 className="text-2xl md:text-4xl font-bold text-white mb-4 uppercase tracking-tighter">{item.title}</h4>
+                          <span className="inline-flex items-center gap-2 text-[10px] font-bold text-white/60 uppercase tracking-[0.3em] group-hover:text-white transition-colors">
+                            Explore Collection <ArrowRight className="w-4 h-4" />
+                          </span>
+                        </motion.div>
+                      </div>
+                    </div>
+                  </Link>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="absolute -left-4 md:-left-20 top-1/2 -translate-y-1/2">
+              <CarouselPrevious className="h-12 w-12 border-primary/10 hover:bg-primary hover:text-white transition-all shadow-xl bg-background" />
+            </div>
+            <div className="absolute -right-4 md:-right-20 top-1/2 -translate-y-1/2">
+              <CarouselNext className="h-12 w-12 border-primary/10 hover:bg-primary hover:text-white transition-all shadow-xl bg-background" />
+            </div>
+          </Carousel>
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link href="/products" className="inline-flex items-center gap-4 text-foreground font-black text-[11px] uppercase tracking-[0.4em] hover:text-primary transition-all border-b-2 border-primary/20 pb-2">
+            View Complete Inventory
+          </Link>
         </div>
       </Section>
 
@@ -290,7 +325,6 @@ export default function LuxuryLanding() {
         </div>
       </Section>
 
-      {/* Footer */}
       <footer className="py-20 bg-background border-t border-border px-6 md:px-12">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
           <Link href="/" className="flex flex-col items-center md:items-start group">
@@ -326,7 +360,6 @@ export default function LuxuryLanding() {
         </div>
       </footer>
 
-      {/* Floating WhatsApp Button */}
       <a
         href="https://wa.me/919876543210"
         target="_blank"
