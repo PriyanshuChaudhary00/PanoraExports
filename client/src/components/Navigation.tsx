@@ -37,10 +37,10 @@ export default function Navigation() {
                     </div>
                     <div className="flex flex-col justify-center">
                         <div className="flex items-baseline gap-1.5">
-                            <span className="font-bold text-lg tracking-tight text-primary">
+                            <span className="font-bold text-lg tracking-tight text-foreground">
                                 PANORA
                             </span>
-                            <span className="font-serif italic text-primary text-base font-light">
+                            <span className="font-serif italic text-foreground text-base font-light">
                                 exports
                             </span>
                         </div>
@@ -59,8 +59,8 @@ export default function Navigation() {
                             className={cn(
                                 "text-[9px] tracking-[0.2em] uppercase font-bold transition-all duration-300 relative py-1",
                                 location === item.href
-                                    ? "text-primary"
-                                    : "text-muted-foreground/70 hover:text-primary"
+                                    ? "text-foreground"
+                                    : "text-muted-foreground/70 hover:text-foreground"
                             )}
                         >
                             {item.label}

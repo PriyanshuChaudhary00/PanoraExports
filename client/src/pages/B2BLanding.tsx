@@ -31,7 +31,7 @@ const Section = ({ children, className = "" }: { children: React.ReactNode, clas
 
 export default function B2BLanding() {
     return (
-        <div className="min-h-screen bg-[#F8F6F2] text-[#2E2E2E] font-sans antialiased">
+        <div className="min-h-screen bg-background text-foreground font-sans antialiased">
             <Grain />
             <Navigation />
 
@@ -40,7 +40,7 @@ export default function B2BLanding() {
                 {/* Background Image with Overlay */}
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-[url('/hero-plane.png')] bg-cover bg-center opacity-20 blur-[2px]" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#1F3D2B]/80 via-[#1F3D2B]/60 to-[#F8F6F2]" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-background" />
                 </div>
 
                 {/* Hero Content */}
@@ -60,12 +60,12 @@ export default function B2BLanding() {
                         {/* CTAs */}
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Link href="/contact">
-                                <button className="px-10 py-4 bg-[#1F3D2B] text-white rounded-md text-base font-medium hover:bg-[#2d5a3f] transition-all duration-300 shadow-lg hover:shadow-xl">
+                                <button className="px-10 py-4 bg-primary text-primary-foreground rounded-md text-base font-medium hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl">
                                     Request Product Catalogue
                                 </button>
                             </Link>
                             <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-                                <button className="px-10 py-4 bg-white text-[#1F3D2B] rounded-md text-base font-medium hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2">
+                                <button className="px-10 py-4 bg-white text-primary rounded-md text-base font-medium hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2">
                                     <MessageCircle className="w-5 h-5" />
                                     WhatsApp Us
                                 </button>
@@ -89,10 +89,10 @@ export default function B2BLanding() {
             <Section className="py-24 px-6">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1F3D2B] mb-4">
+                        <h2 className="font-heading text-4xl md:text-5xl font-semibold text-primary mb-4">
                             What We Export
                         </h2>
-                        <div className="w-20 h-1 bg-[#1F3D2B] mx-auto" />
+                        <div className="w-20 h-1 bg-accent mx-auto" />
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
@@ -119,15 +119,15 @@ export default function B2BLanding() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                                className="bg-white p-10 rounded-none border-t-2 border-[#1F3D2B] hover:shadow-xl transition-shadow duration-300"
+                                className="bg-white p-10 rounded-none border-t-2 border-accent hover:shadow-xl transition-shadow duration-300"
                             >
-                                <div className="w-16 h-16 bg-[#F8F6F2] flex items-center justify-center mb-6">
-                                    <item.icon className="w-8 h-8 text-[#1F3D2B]" strokeWidth={1.5} />
+                                <div className="w-16 h-16 bg-muted flex items-center justify-center mb-6">
+                                    <item.icon className="w-8 h-8 text-accent" strokeWidth={1.5} />
                                 </div>
-                                <h3 className="font-heading text-2xl font-semibold text-[#2E2E2E] mb-4">
+                                <h3 className="font-heading text-2xl font-semibold text-foreground mb-4">
                                     {item.title}
                                 </h3>
-                                <p className="text-[#666] leading-relaxed">
+                                <p className="text-muted-foreground leading-relaxed">
                                     {item.desc}
                                 </p>
                             </motion.div>
@@ -142,14 +142,14 @@ export default function B2BLanding() {
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         {/* Left: Image */}
                         <div className="relative">
-                            <div className="aspect-[4/3] bg-gradient-to-br from-[#1F3D2B] to-[#2d5a3f] rounded-none overflow-hidden">
+                            <div className="aspect-[4/3] bg-gradient-to-br from-primary to-primary/90 rounded-xl overflow-hidden">
                                 <img
                                     src="/hero-plane.png"
                                     alt="Warehouse"
                                     className="w-full h-full object-cover opacity-60 mix-blend-overlay"
                                 />
                             </div>
-                            <div className="absolute -bottom-6 -right-6 bg-[#1F3D2B] text-white p-8 max-w-xs">
+                            <div className="absolute -bottom-6 -right-6 bg-primary text-white p-8 max-w-xs">
                                 <p className="text-sm italic leading-relaxed">
                                     "Reliability is our core promise to every international buyer."
                                 </p>
@@ -158,10 +158,10 @@ export default function B2BLanding() {
 
                         {/* Right: Content */}
                         <div>
-                            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1F3D2B] mb-8">
+                            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-primary mb-8">
                                 Why Panora Exports
                             </h2>
-                            <p className="text-lg text-[#666] mb-10 leading-relaxed">
+                            <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
                                 We bridge the gap between Indian craftsmanship and global quality standards, ensuring every transaction is built on trust and transparency.
                             </p>
 
@@ -181,10 +181,10 @@ export default function B2BLanding() {
                                         transition={{ duration: 0.5, delay: i * 0.1 }}
                                         className="flex items-center gap-4"
                                     >
-                                        <div className="w-6 h-6 rounded-full bg-[#1F3D2B] flex items-center justify-center flex-shrink-0">
+                                        <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
                                             <CheckCircle className="w-4 h-4 text-white" strokeWidth={2.5} />
                                         </div>
-                                        <span className="text-lg text-[#2E2E2E]">{item}</span>
+                                        <span className="text-lg text-foreground">{item}</span>
                                     </motion.div>
                                 ))}
                             </div>
@@ -198,13 +198,13 @@ export default function B2BLanding() {
                 <div className="max-w-7xl mx-auto">
                     <div className="flex justify-between items-end mb-12">
                         <div>
-                            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1F3D2B] mb-2">
+                            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-primary mb-2">
                                 Product Preview
                             </h2>
-                            <div className="w-20 h-1 bg-[#1F3D2B]" />
+                            <div className="w-20 h-1 bg-accent" />
                         </div>
                         <Link href="/products">
-                            <button className="text-[#1F3D2B] font-medium hover:underline underline-offset-4">
+                            <button className="text-primary font-medium hover:underline underline-offset-4">
                                 View Full Catalogue →
                             </button>
                         </Link>
@@ -242,7 +242,7 @@ export default function B2BLanding() {
             </Section>
 
             {/* TRUST & CREDENTIALS */}
-            <Section className="py-24 px-6 bg-[#1F3D2B] text-white">
+            <Section className="py-24 px-6 bg-primary text-white">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="font-heading text-4xl md:text-5xl font-semibold mb-12">
                         Trust & Credentials
@@ -276,10 +276,10 @@ export default function B2BLanding() {
             {/* CONTACT CTA */}
             <Section className="py-24 px-6">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="font-heading text-4xl md:text-5xl font-semibold text-[#1F3D2B] mb-6">
+                    <h2 className="font-heading text-4xl md:text-5xl font-semibold text-primary mb-6">
                         Looking for a reliable sourcing partner in India?
                     </h2>
-                    <p className="text-lg text-[#666] mb-12 max-w-2xl mx-auto">
+                    <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
                         Connect with us today to discuss your export requirements and discover how we can support your global sourcing needs.
                     </p>
 
@@ -291,14 +291,14 @@ export default function B2BLanding() {
                             </button>
                         </a>
                         <a href="mailto:panoraexports@gmail.com">
-                            <button className="px-10 py-4 bg-white border-2 border-[#1F3D2B] text-[#1F3D2B] rounded-md text-base font-medium hover:bg-[#1F3D2B] hover:text-white transition-all duration-300 flex items-center gap-3">
+                            <button className="px-10 py-4 bg-white border-2 border-primary text-primary rounded-md text-base font-medium hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-3">
                                 <Mail className="w-5 h-5" />
                                 panoraexports@gmail.com
                             </button>
                         </a>
                     </div>
 
-                    <div className="mt-8 flex items-center justify-center gap-2 text-[#666]">
+                    <div className="mt-8 flex items-center justify-center gap-2 text-muted-foreground">
                         <MapPin className="w-5 h-5" />
                         <span>Mumbai, India | Global Export Hub</span>
                     </div>
@@ -306,7 +306,7 @@ export default function B2BLanding() {
             </Section>
 
             {/* FOOTER */}
-            <footer className="bg-[#2E2E2E] text-white py-16 px-6">
+            <footer className="bg-primary text-white py-16 px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-4 gap-12 mb-12">
                         <div className="col-span-2">

@@ -1,7 +1,7 @@
 'use client';
 
 import { useParams, useLocation } from 'wouter';
-import { ArrowLeft, Package, Shield, Truck, Star, Share2, Globe, FileText } from 'lucide-react';
+import { ArrowLeft, Package, Shield, Truck, Star, Share2, Globe, FileText, Mail, BookOpen, Download, MessageCircle } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
@@ -204,15 +204,47 @@ export default function ProductDetailPage() {
                         </div>
 
                         {/* Actions */}
-                        <div className="flex flex-col sm:flex-row gap-4 mt-auto">
-                            <button className="flex-1 px-10 py-5 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-widest hover:opacity-95 transition-all rounded-sm flex items-center justify-center gap-3 group">
-                                <FileText className="w-4 h-4" />
-                                Get a Quote
-                            </button>
-                            <button className="px-10 py-5 border border-primary text-primary text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-secondary transition-all rounded-sm flex items-center justify-center gap-3">
-                                <Globe className="w-4 h-4" />
-                                Supplier Info
-                            </button>
+                        <div className="flex flex-col gap-4 mt-auto">
+                            {/* Primary CTAs */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <button className="px-8 py-4 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-widest hover:bg-primary/90 transition-all rounded-sm flex items-center justify-center gap-3 shadow-lg">
+                                    <Mail className="w-4 h-4" />
+                                    Enquire Now
+                                </button>
+                                <button className="px-8 py-4 bg-accent text-accent-foreground text-[10px] font-bold uppercase tracking-widest hover:bg-accent/90 transition-all rounded-sm flex items-center justify-center gap-3 shadow-lg">
+                                    <FileText className="w-4 h-4" />
+                                    Get Price Quote
+                                </button>
+                            </div>
+
+                            {/* Secondary CTAs */}
+                            <div className="grid grid-cols-2 gap-4">
+                                <button className="px-4 py-3 border border-border bg-background hover:bg-secondary transition-all rounded-sm flex items-center justify-center gap-2 text-[9px] font-bold uppercase tracking-widest text-primary">
+                                    <Package className="w-3.5 h-3.5" />
+                                    Ask for Samples
+                                </button>
+                                <button className="px-4 py-3 border border-border bg-background hover:bg-secondary transition-all rounded-sm flex items-center justify-center gap-2 text-[9px] font-bold uppercase tracking-widest text-primary">
+                                    <BookOpen className="w-3.5 h-3.5" />
+                                    Request Catalogue
+                                </button>
+                            </div>
+
+                            {/* Tertiary Actions */}
+                            <div className="grid grid-cols-2 gap-4">
+                                <button className="px-4 py-3 border border-border bg-background hover:bg-secondary transition-all rounded-sm flex items-center justify-center gap-2 text-[9px] font-bold uppercase tracking-widest text-primary">
+                                    <Download className="w-3.5 h-3.5" />
+                                    Download Specs
+                                </button>
+                                <a
+                                    href="https://wa.me/919876543210"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-4 py-3 bg-[#25D366] text-white hover:bg-[#20bd5a] transition-all rounded-sm flex items-center justify-center gap-2 text-[9px] font-bold uppercase tracking-widest shadow-sm"
+                                >
+                                    <MessageCircle className="w-3.5 h-3.5" />
+                                    WhatsApp
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

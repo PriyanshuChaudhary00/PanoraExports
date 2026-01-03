@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ReactNode } from "react";
 import {
   CheckCircle2,
   MessageCircle,
@@ -20,7 +21,7 @@ import Navigation from "@/components/Navigation";
 // Assets
 import containerShip from "@assets/stock_images/luxury_container_shi_990cf15c.jpg";
 import logisticsImage from "@assets/stock_images/modern_automated_log_e4071bac.jpg";
-import heroImage from "/hero-plane.png";
+const heroImage = "/aeroplane.jpg";
 
 // --- Components ---
 
@@ -30,7 +31,7 @@ const Grain = () => (
   />
 );
 
-const Section = ({ children, className = "", id = "" }: { children: React.ReactNode, className?: string, id?: string }) => (
+const Section = ({ children, className = "", id = "" }: { children: ReactNode, className?: string, id?: string }) => (
   <section id={id} className={`py-16 md:py-24 px-6 ${className}`}>
     <div className="max-w-6xl mx-auto">
       {children}
@@ -50,6 +51,7 @@ const ExportCard = ({ icon: Icon, title, desc }: { icon: any, title: string, des
 );
 
 export default function LuxuryLanding() {
+
   return (
     <div className="font-sans bg-background text-foreground selection:bg-primary selection:text-primary-foreground antialiased">
       <Grain />
@@ -58,13 +60,16 @@ export default function LuxuryLanding() {
       {/* 1. HERO SECTION */}
       <section className="relative h-screen flex items-center overflow-hidden bg-background">
         <div className="absolute inset-0 z-0">
-          <img
+          <motion.img
             src={heroImage}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5 }}
             alt="Hero Background"
-            className="w-full h-full object-cover scale-[1.01] brightness-[1.02]"
+            className="absolute inset-0 w-full h-full object-cover scale-[1.01] brightness-[1.1]"
           />
           {/* Subtle gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent z-10" />
         </div>
 
         <div className="relative z-10 w-full px-6 md:px-12 lg:px-24">
@@ -148,8 +153,8 @@ export default function LuxuryLanding() {
               <h2 className="text-[10px] font-bold text-primary uppercase tracking-[0.3em]">Our Values</h2>
             </div>
 
-            <h3 className="text-4xl md:text-5xl font-bold text-primary mb-10 leading-tight tracking-tight">
-              Building <span className="font-serif italic font-light opacity-80 text-primary">Global</span> Trust.
+            <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-10 leading-tight tracking-tight">
+              Building <span className="font-serif italic font-light opacity-80 text-foreground">Global</span> Trust.
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -165,16 +170,15 @@ export default function LuxuryLanding() {
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                     <CheckCircle2 strokeWidth={2} className="w-3.5 h-3.5" />
                   </div>
-                  <span className="text-base text-primary/70 font-medium tracking-tight group-hover:text-primary transition-colors">{item}</span>
+                  <span className="text-base text-foreground/70 font-medium tracking-tight group-hover:text-primary transition-colors">{item}</span>
                 </div>
               ))}
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-[4/3] overflow-hidden rounded-sm grayscale-[0.5] contrast-110">
+            <div className="aspect-[4/3] overflow-hidden rounded-xl grayscale-[0.5] contrast-110 shadow-2xl">
               <img src="https://images.unsplash.com/photo-1609143739217-01b60dad1c67?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Global Logistics" className="w-full h-full object-cover" />
             </div>
-            <div className="absolute inset-0 border-[16px] border-background/40 pointer-events-none" />
           </div>
         </div>
       </Section>
@@ -185,11 +189,11 @@ export default function LuxuryLanding() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-[1.5px] bg-primary" />
-              <h2 className="text-[10px] font-bold text-primary uppercase tracking-[0.3em]">Our Collection</h2>
+              <h2 className="text-[10px] font-bold text-foreground uppercase tracking-[0.3em]">Our Collection</h2>
             </div>
-            <h3 className="text-3xl md:text-5xl font-bold text-primary tracking-tight">Browse <span className="font-serif italic font-light opacity-80">Products.</span></h3>
+            <h3 className="text-3xl md:text-5xl font-bold text-foreground tracking-tight">Browse <span className="font-serif italic font-light opacity-80">Products.</span></h3>
           </div>
-          <Link href="/products" className="group text-primary font-bold text-[10px] uppercase tracking-[0.2em] flex items-center gap-2 hover:gap-4 transition-all border-b border-border pb-1.5">
+          <Link href="/products" className="group text-foreground font-bold text-[10px] uppercase tracking-[0.2em] flex items-center gap-2 hover:gap-4 transition-all border-b border-border pb-1.5">
             View All Products <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -202,14 +206,14 @@ export default function LuxuryLanding() {
             { title: "Industrial Goods", img: "https://images.unsplash.com/photo-1623610590744-fce60d8dd48c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }
           ].map((item, i) => (
             <Link key={i} href="/products" className="group block">
-              <div className="aspect-[1/1] overflow-hidden bg-card mb-4 border border-border">
+              <div className="aspect-[1/1] overflow-hidden bg-card mb-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
                 <img
                   src={item.img}
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <h3 className="text-xs font-bold text-primary uppercase tracking-wider text-center group-hover:text-primary transition-colors">{item.title}</h3>
+              <h3 className="text-xs font-bold text-foreground uppercase tracking-wider text-center group-hover:text-primary transition-colors">{item.title}</h3>
             </Link>
           ))}
         </div>
@@ -220,31 +224,31 @@ export default function LuxuryLanding() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-16">
             <div className="w-10 h-[1px] bg-border" />
-            <span className="text-[10px] font-bold text-primary uppercase tracking-[0.3em]">Our Certifications</span>
+            <span className="text-[10px] font-bold text-foreground uppercase tracking-[0.3em]">Our Certifications</span>
             <div className="w-10 h-[1px] bg-border" />
           </div>
 
           <div className="flex flex-wrap justify-center gap-x-16 gap-y-10 mb-16">
             <div className="flex flex-col items-center gap-3 group">
-              <div className="w-14 h-14 bg-secondary rounded-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                 <Shield strokeWidth={1} className="w-6 h-6" />
               </div>
               <span className="font-bold uppercase tracking-[0.1em] text-[9px] text-primary/60">GST Verified</span>
             </div>
             <div className="flex flex-col items-center gap-3 group">
-              <div className="w-14 h-14 bg-secondary rounded-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                 <FileCheck strokeWidth={1} className="w-6 h-6" />
               </div>
               <span className="font-bold uppercase tracking-[0.1em] text-[9px] text-primary/60">IEC Certified</span>
             </div>
             <div className="flex flex-col items-center gap-3 group">
-              <div className="w-14 h-14 bg-secondary rounded-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                 <Globe strokeWidth={1} className="w-6 h-6" />
               </div>
               <span className="font-bold uppercase tracking-[0.1em] text-[9px] text-primary/60">Global Markets</span>
             </div>
           </div>
-          <p className="text-lg text-primary/70 leading-relaxed max-w-2xl mx-auto font-medium font-serif italic">
+          <p className="text-lg text-foreground/70 leading-relaxed max-w-2xl mx-auto font-medium font-serif italic">
             Serving buyers across UAE, UK, and Europe with high-capacity sourcing and ethical trade standards.
           </p>
         </div>
@@ -263,7 +267,7 @@ export default function LuxuryLanding() {
           <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
             <a
               href="https://wa.me/919876543210"
-              className="flex flex-col items-center p-10 bg-primary-foreground/5 border border-primary-foreground/10 rounded-sm hover:bg-primary-foreground/10 transition-all group"
+              className="flex flex-col items-center p-10 bg-primary-foreground/5 border border-primary-foreground/10 rounded-2xl hover:bg-primary-foreground/10 transition-all group"
             >
               <MessageCircle className="w-10 h-12 mb-4 text-primary-foreground/60 group-hover:text-primary-foreground transition-colors" strokeWidth={1} />
               <span className="text-[9px] uppercase tracking-[0.3em] text-primary-foreground/40 mb-3 font-bold">WhatsApp</span>
@@ -271,7 +275,7 @@ export default function LuxuryLanding() {
             </a>
             <a
               href="mailto:panoraexports@gmail.com"
-              className="flex flex-col items-center p-10 bg-primary-foreground/5 border border-primary-foreground/10 rounded-sm hover:bg-primary-foreground/10 transition-all group"
+              className="flex flex-col items-center p-10 bg-primary-foreground/5 border border-primary-foreground/10 rounded-2xl hover:bg-primary-foreground/10 transition-all group"
             >
               <Mail className="w-10 h-12 mb-4 text-primary-foreground/60 group-hover:text-primary-foreground transition-colors" strokeWidth={1} />
               <span className="text-[9px] uppercase tracking-[0.3em] text-primary-foreground/40 mb-3 font-bold">Email</span>

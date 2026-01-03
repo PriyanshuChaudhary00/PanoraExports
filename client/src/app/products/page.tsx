@@ -116,7 +116,7 @@ export default function ProductsPage() {
             </section>
 
             {/* Controls */}
-            <section className="sticky top-[72px] z-40 bg-background/95 backdrop-blur-sm border-b border-border">
+            <section className="sticky top-[72px] z-40 bg-background/80 backdrop-blur-md border-b border-border/50">
                 <div className="max-w-[1600px] mx-auto px-6 py-4 flex flex-col md:flex-row gap-4 justify-between items-center">
 
                     {/* Search & Filter */}
@@ -128,7 +128,7 @@ export default function ProductsPage() {
                                 placeholder="Search products..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="pl-10 pr-4 py-2 bg-secondary/30 border border-transparent focus:border-primary/20 rounded-sm text-sm font-medium w-64 outline-none transition-all placeholder:text-primary/30 text-primary"
+                                className="pl-10 pr-4 py-2 bg-secondary/10 border border-transparent focus:border-primary/20 rounded-full text-sm font-medium w-64 outline-none transition-all placeholder:text-primary/30 text-primary"
                             />
                         </div>
                         <div className="h-8 w-[1px] bg-border mx-2" />
@@ -138,7 +138,7 @@ export default function ProductsPage() {
                                     key={cat}
                                     onClick={() => setSelectedCategory(cat)}
                                     className={cn(
-                                        "px-4 py-2 text-[10px] font-bold uppercase tracking-widest rounded-sm transition-all border border-transparent whitespace-nowrap",
+                                        "px-4 py-2 text-[10px] font-bold uppercase tracking-widest rounded-full transition-all border border-transparent whitespace-nowrap",
                                         selectedCategory === cat
                                             ? "bg-primary text-primary-foreground"
                                             : "bg-secondary text-primary/70 hover:text-primary hover:border-primary/20"
@@ -151,11 +151,11 @@ export default function ProductsPage() {
                     </div>
 
                     {/* View Toggle */}
-                    <div className="flex items-center gap-2 p-1 bg-secondary rounded-sm border border-border">
+                    <div className="flex items-center gap-2 p-1 bg-secondary/10 rounded-full border border-border/50">
                         <button
                             onClick={() => setViewMode('grid')}
                             className={cn(
-                                "p-2 rounded-sm transition-all",
+                                "p-2 rounded-full transition-all",
                                 viewMode === 'grid' ? "bg-background shadow-sm text-primary" : "text-primary/40 hover:text-primary"
                             )}
                         >
@@ -164,7 +164,7 @@ export default function ProductsPage() {
                         <button
                             onClick={() => setViewMode('list')}
                             className={cn(
-                                "p-2 rounded-sm transition-all",
+                                "p-2 rounded-full transition-all",
                                 viewMode === 'list' ? "bg-background shadow-sm text-primary" : "text-primary/40 hover:text-primary"
                             )}
                         >
@@ -188,7 +188,7 @@ export default function ProductsPage() {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.3, delay: index * 0.05 }}
                             className={cn(
-                                "group bg-background border border-border hover:border-primary/30 transition-all rounded-sm overflow-hidden flex",
+                                "group bg-background border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all rounded-xl overflow-hidden flex",
                                 viewMode === 'list' ? "flex-row h-48" : "flex-col"
                             )}
                         >

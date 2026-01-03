@@ -55,7 +55,7 @@ export default function ContactPage() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary text-primary text-[9px] font-bold uppercase tracking-widest mb-8 border border-border rounded-sm"
+                        className="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary/10 text-primary text-[9px] font-bold uppercase tracking-widest mb-8 border border-border/50 rounded-full"
                     >
                         <MessageCircle className="w-3.5 h-3.5" />
                         Get in Touch
@@ -75,7 +75,7 @@ export default function ContactPage() {
 
             <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2">
                 {/* Contact Info */}
-                <div className="bg-secondary/30 p-12 lg:p-20 border-b lg:border-b-0 lg:border-r border-border">
+                <div className="p-12 lg:p-20 border-b lg:border-b-0 lg:border-r border-border">
                     <h2 className="text-2xl font-bold text-primary mb-12 uppercase tracking-tight">Contact Information</h2>
 
                     <div className="space-y-12">
@@ -148,7 +148,7 @@ export default function ContactPage() {
                                 <label className="text-[10px] font-bold text-primary uppercase tracking-widest">Name</label>
                                 <input
                                     {...form.register('name')}
-                                    className="w-full bg-secondary/30 border-b border-primary/20 focus:border-primary px-0 py-3 outline-none transition-all placeholder:text-primary/20 text-primary font-medium"
+                                    className="w-full bg-transparent border-b border-primary/20 focus:border-primary px-0 py-3 outline-none transition-all placeholder:text-primary/20 text-primary font-medium"
                                     placeholder="John Doe"
                                 />
                                 {form.formState.errors.name && (
@@ -159,7 +159,7 @@ export default function ContactPage() {
                                 <label className="text-[10px] font-bold text-primary uppercase tracking-widest">Email</label>
                                 <input
                                     {...form.register('email')}
-                                    className="w-full bg-secondary/30 border-b border-primary/20 focus:border-primary px-0 py-3 outline-none transition-all placeholder:text-primary/20 text-primary font-medium"
+                                    className="w-full bg-transparent border-b border-primary/20 focus:border-primary px-0 py-3 outline-none transition-all placeholder:text-primary/20 text-primary font-medium"
                                     placeholder="john@company.com"
                                 />
                                 {form.formState.errors.email && (
@@ -172,7 +172,7 @@ export default function ContactPage() {
                             <label className="text-[10px] font-bold text-primary uppercase tracking-widest">Subject</label>
                             <input
                                 {...form.register('subject')}
-                                className="w-full bg-secondary/30 border-b border-primary/20 focus:border-primary px-0 py-3 outline-none transition-all placeholder:text-primary/20 text-primary font-medium"
+                                className="w-full bg-transparent border-b border-primary/20 focus:border-primary px-0 py-3 outline-none transition-all placeholder:text-primary/20 text-primary font-medium"
                                 placeholder="Inquiry about..."
                             />
                             {form.formState.errors.subject && (
@@ -184,7 +184,7 @@ export default function ContactPage() {
                             <label className="text-[10px] font-bold text-primary uppercase tracking-widest">Message</label>
                             <textarea
                                 {...form.register('message')}
-                                className="w-full bg-secondary/30 border-b border-primary/20 focus:border-primary px-0 py-3 outline-none transition-all placeholder:text-primary/20 min-h-[150px] resize-y text-primary font-medium"
+                                className="w-full bg-transparent border-b border-primary/20 focus:border-primary px-0 py-3 outline-none transition-all placeholder:text-primary/20 min-h-[150px] resize-y text-primary font-medium"
                                 placeholder="Tell us about your requirements..."
                             />
                             {form.formState.errors.message && (
@@ -195,7 +195,7 @@ export default function ContactPage() {
                         <button
                             type="submit"
                             disabled={isSubmitting}
-                            className="w-full bg-primary text-primary-foreground py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:opacity-90 transition-all disabled:opacity-50 flex items-center justify-center gap-3 rounded-sm mt-6"
+                            className="w-full bg-primary text-primary-foreground py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:opacity-90 transition-all disabled:opacity-50 flex items-center justify-center gap-3 rounded-full mt-6 shadow-lg hover:shadow-xl hover:-translate-y-1"
                         >
                             {isSubmitting ? (
                                 <span className="animate-pulse">Sending...</span>

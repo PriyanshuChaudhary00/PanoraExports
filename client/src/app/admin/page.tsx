@@ -130,7 +130,7 @@ export default function AdminDashboard() {
 
     return (
         <ProtectedRoute requireAdmin={true}>
-            <div className="min-h-screen bg-background pt-[112px] pb-20 font-sans antialiased text-primary">
+            <div className="min-h-screen bg-background pt-[112px] pb-20 font-sans antialiased text-foreground">
                 <Navigation />
 
                 <div className="max-w-[1600px] mx-auto px-8 md:px-12">
@@ -139,12 +139,12 @@ export default function AdminDashboard() {
                         <div>
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-8 h-[1.5px] bg-primary" />
-                                <span className="text-[9px] uppercase tracking-widest font-bold text-primary">Admin Control</span>
+                                <span className="text-[9px] uppercase tracking-widest font-bold text-foreground">Admin Control</span>
                             </div>
-                            <h1 className="text-4xl md:text-6xl font-bold text-primary tracking-tight mb-4">
+                            <h1 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight mb-4">
                                 Admin <span className="font-serif italic font-light opacity-80">Dashboard.</span>
                             </h1>
-                            <p className="text-primary/60 text-[13px] max-w-xl font-medium leading-relaxed">
+                            <p className="text-muted-foreground text-[13px] max-w-xl font-medium leading-relaxed">
                                 Manage your product catalog, monitor inventory, and oversee verified business profiles.
                             </p>
                         </div>
@@ -204,7 +204,7 @@ export default function AdminDashboard() {
                                         placeholder="SEARCH PRODUCTS OR SUPPLIERS..."
                                         value={searchTerm}
                                         onChange={(e) => setSearchTerm(e.target.value)}
-                                        className="w-full pl-11 pr-4 py-3.5 border border-border bg-background text-primary text-[10px] font-bold tracking-widest focus:outline-none focus:border-primary transition-all placeholder:text-primary/20 uppercase rounded-sm"
+                                        className="w-full pl-11 pr-4 py-3.5 border border-border bg-background text-foreground text-[10px] font-bold tracking-widest focus:outline-none focus:border-primary transition-all placeholder:text-muted-foreground/50 uppercase rounded-sm"
                                     />
                                 </div>
 
@@ -269,7 +269,7 @@ export default function AdminDashboard() {
                                                         />
                                                     </div>
                                                     <div>
-                                                        <p className="font-bold text-primary text-[13px] uppercase tracking-tight mb-1">
+                                                        <p className="font-bold text-foreground text-[13px] uppercase tracking-tight mb-1">
                                                             {product.name}
                                                         </p>
                                                         <div className="flex items-center gap-2">
@@ -286,16 +286,16 @@ export default function AdminDashboard() {
                                                 </div>
                                             </td>
                                             <td className="px-8 py-6">
-                                                <span className="text-[8px] font-bold text-primary uppercase tracking-widest px-3 py-1 bg-secondary border border-border rounded-sm">
+                                                <span className="text-[8px] font-bold text-secondary-foreground uppercase tracking-widest px-3 py-1 bg-secondary border border-border rounded-sm">
                                                     {product.category}
                                                 </span>
                                             </td>
-                                            <td className="px-8 py-6 font-bold text-primary text-sm">
+                                            <td className="px-8 py-6 font-bold text-foreground text-sm">
                                                 {product.price}
                                             </td>
                                             <td className="px-8 py-6">
                                                 <div className="flex flex-col">
-                                                    <span className="text-[13px] font-bold text-primary">{product.stock?.toLocaleString()}</span>
+                                                    <span className="text-[13px] font-bold text-foreground">{product.stock?.toLocaleString()}</span>
                                                     <span className="text-[8px] font-bold text-primary/30 uppercase tracking-widest">Units</span>
                                                 </div>
                                             </td>
@@ -392,14 +392,14 @@ function StatCard({ icon: Icon, label, value, subValue }: {
             </div>
 
             <div className="space-y-1">
-                <p className="text-4xl font-bold text-primary tracking-tight">
+                <p className="text-4xl font-bold text-foreground tracking-tight">
                     {value}
                 </p>
                 <div>
                     <p className="text-[9px] font-bold text-primary uppercase tracking-widst mb-1 opacity-40">
                         {label}
                     </p>
-                    <p className="text-[11px] font-medium text-primary/60">
+                    <p className="text-[11px] font-medium text-muted-foreground">
                         {subValue}
                     </p>
                 </div>
@@ -488,7 +488,7 @@ function ProductModal({
                                     required
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                    className="w-full px-0 py-3 bg-transparent border-b border-border text-primary font-bold text-lg focus:outline-none focus:border-primary transition-all placeholder:text-primary/10"
+                                    className="w-full px-0 py-3 bg-transparent border-b border-border text-foreground font-bold text-lg focus:outline-none focus:border-primary transition-all placeholder:text-muted-foreground/30"
                                     placeholder="Enter product name"
                                 />
                             </div>
@@ -503,7 +503,7 @@ function ProductModal({
                                         required
                                         value={formData.category}
                                         onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                                        className="w-full px-0 py-3 bg-transparent border-b border-border text-primary font-bold text-[13px] uppercase tracking-widest focus:outline-none focus:border-primary appearance-none cursor-pointer"
+                                        className="w-full px-0 py-3 bg-transparent border-b border-border text-foreground font-bold text-[13px] uppercase tracking-widest focus:outline-none focus:border-primary appearance-none cursor-pointer"
                                     >
                                         <option>Textiles</option>
                                         <option>Agriculture</option>
@@ -524,7 +524,7 @@ function ProductModal({
                                         required
                                         value={formData.supplier}
                                         onChange={(e) => setFormData({ ...formData, supplier: e.target.value })}
-                                        className="w-full px-0 py-3 bg-transparent border-b border-border text-primary font-bold text-[13px] uppercase tracking-widest focus:outline-none focus:border-primary transition-all"
+                                        className="w-full px-0 py-3 bg-transparent border-b border-border text-foreground font-bold text-[13px] uppercase tracking-widest focus:outline-none focus:border-primary transition-all"
                                         placeholder="Supplier ID"
                                     />
                                 </div>
@@ -541,7 +541,7 @@ function ProductModal({
                                         required
                                         value={formData.price}
                                         onChange={(e) => setFormData({ ...formData, price: e.target.value })}
-                                        className="w-full px-0 py-3 bg-transparent border-b border-border text-primary font-bold text-[13px] uppercase tracking-widest focus:outline-none focus:border-primary transition-all"
+                                        className="w-full px-0 py-3 bg-transparent border-b border-border text-foreground font-bold text-[13px] uppercase tracking-widest focus:outline-none focus:border-primary transition-all"
                                         placeholder="$0.00"
                                     />
                                 </div>
@@ -553,7 +553,7 @@ function ProductModal({
                                         type="number"
                                         value={formData.stock}
                                         onChange={(e) => setFormData({ ...formData, stock: parseInt(e.target.value) })}
-                                        className="w-full px-0 py-3 bg-transparent border-b border-border text-primary font-bold text-[13px] uppercase tracking-widest focus:outline-none focus:border-primary transition-all"
+                                        className="w-full px-0 py-3 bg-transparent border-b border-border text-foreground font-bold text-[13px] uppercase tracking-widest focus:outline-none focus:border-primary transition-all"
                                         placeholder="0"
                                     />
                                 </div>
@@ -569,7 +569,7 @@ function ProductModal({
                                     required
                                     value={formData.image}
                                     onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                                    className="w-full px-0 py-3 bg-transparent border-b border-border text-primary font-bold text-[13px] uppercase tracking-widest focus:outline-none focus:border-primary transition-all"
+                                    className="w-full px-0 py-3 bg-transparent border-b border-border text-foreground font-bold text-[13px] uppercase tracking-widest focus:outline-none focus:border-primary transition-all"
                                     placeholder="https://..."
                                 />
                             </div>
@@ -583,7 +583,7 @@ function ProductModal({
                                     value={formData.description}
                                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                                     rows={3}
-                                    className="w-full px-0 py-3 bg-transparent border-b border-border text-primary font-medium text-[14px] focus:outline-none focus:border-primary transition-all resize-none leading-relaxed"
+                                    className="w-full px-0 py-3 bg-transparent border-b border-border text-foreground font-medium text-[14px] focus:outline-none focus:border-primary transition-all resize-none leading-relaxed"
                                     placeholder="Brief specifications..."
                                 />
                             </div>
